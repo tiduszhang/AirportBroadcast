@@ -1,0 +1,19 @@
+﻿<div>
+    <form name="createOrEditForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>全局设置</span>
+            </h4>
+        </div>
+        <div class="modal-body">            
+            <div class="form-group form-md-line-input form-md-floating-label no-hint margin-bottom-0">
+                <label>自动播放行李提取时间间隔（单位：分钟）</label>
+                <input type="text" class="form-control edited" ng-model="vm.autoPlayGetLuaTimeSpan" required />
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.loading" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
+            <button type="submit" button-busy="vm.loading" busy-text="保存中" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="createOrEditForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>            
+        </div>
+    </form>
+</div>

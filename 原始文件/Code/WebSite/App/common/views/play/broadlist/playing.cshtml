@@ -1,0 +1,38 @@
+﻿ 
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span>播放列表</span>
+            <button type="button" class="pull-right btn btn-default" ng-click="vm.cancel()">关闭</button>
+        </h4>       
+    </div>
+    <div class="modal-body">
+        <div>
+            <div class="row">
+                <div class="col  col-md-6">
+                    <audio src="Content/Audios/Temp/{{ vm.playAudio.fileName}}" autoplay controls="controls">
+                       你的浏览器不支持播放，请升级浏览器
+                    </audio>
+                    <div style="text-align:left;margin:10px;">
+                      <span ng-if="vm.playAudio">正在播放：</span> 
+                      <span style="font-weight:bold">{{  vm.playAudio.remark }}</span>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <ul>
+                        <li ng-repeat="item in vm.playlist">
+                            <a role="button" class="btn btn-link" ng-click="vm.selectAudio(item)">
+                               {{item.remark}}<span ng-if="vm.playAudio===item"> （播放中）</span>
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+       
+    </div>
+    <div class="modal-footer">
+       
+     </div>
+ 
+    

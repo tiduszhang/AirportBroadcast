@@ -1,0 +1,54 @@
+﻿<div>
+    <form name="createOrEditForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>手工插播</span>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <label style="font-weight:bolder;font-size:14px;">需要播放的语音</label>
+            <textarea type="text" multiple="multiple" class="form-control edited"
+                      style="height:120px;"
+                      ng-model="vm.entity.playText" required />
+
+            <div class="md-checkbox-list">
+                <div class="row" style="font-weight:bolder;padding:10px 18px; ">
+                    <div class="col">
+                        播放区域端口选择
+                    </div>
+                </div>
+                <div class="row" style="padding:0px 18px;">
+                    <div class="md-checkbox" ng-repeat="item in vm.topPwrPortList">
+                        <div class="col col-md-6">
+                            <input id="EditUser_{{item.id}}" class="md-check" type="checkbox" name="isCanSetAllCarryStation{{item.id}}" ng-model="item.isChoose">
+                            <label for="EditUser_{{item.id}}">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                {{item.code}} - {{item.name}} （{{item.remark}}）
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*<div class="md-checkbox-list">
+                    <div class="md-checkbox" ng-repeat="item in vm.deviceList">
+                        <input id="EditUser_{{item.id}}" class="md-check" type="checkbox" name="isCanSetAllCarryStation{{item.id}}" ng-model="item.isChoose">
+                        <label for="EditUser_{{item.id}}">
+                            <span class="inc"></span>
+                            <span class="check"></span>
+                            <span class="box"></span>
+                            {{item.code}} - {{item.name}} （{{item.remark}}）
+                        </label>
+                    </div>
+                </div>*@
+
+        </div>
+
+
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
+            <button type="submit" button-busy="vm.saving" busy-text="处理中" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="createOrEditForm.$invalid"><i class="fa fa-save"></i> <span>播放</span></button>
+        </div>
+    </form>
+</div>

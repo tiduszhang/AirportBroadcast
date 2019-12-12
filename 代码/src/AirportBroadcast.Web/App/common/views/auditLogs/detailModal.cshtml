@@ -1,0 +1,79 @@
+﻿<div>
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span ng-if="!vm.user.id">@L("AuditLogDetail")</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <uib-tabset class="tab-container tabbable-line" active="vm.activeTabIndex">
+            <uib-tab heading="@L("UserInformations")">
+                <table width="100%" style="border:solid 1px;padding:5px;">
+                    <tr>
+                        <td>@L("UserName"):</td>
+                        <td>{{vm.auditLog.userName}}</td>
+                        <td>@L("IpAddress"):</td>
+                        <td>{{vm.auditLog.clientIpAddress}}</td>
+                    </tr>
+                    <tr>
+                        <td>@L("Client"):</td>
+                        <td>{{vm.auditLog.clientName}}</td>
+                        <td>@L("Browser"):</td>
+                        <td>{{vm.auditLog.browserInfo}}</td>
+                    </tr>
+                    <tr>
+                        <td>@L("Service"):</td>
+                        <td>{{vm.auditLog.serviceName}}</td>
+                        <td>@L("Action"):</td>
+                        <td>{{vm.auditLog.methodName}}</td>
+                    </tr>
+                    <tr>
+                        <td>@L("Time"):</td>
+                        <td> {{vm.getExecutionTime()}}</td>
+                        <td>@L("Duration"):</td>
+                        <td>{{vm.getDurationAsMs()}}</td>
+                    </tr>
+                </table>
+                <div style="height:20px;"></div>
+                <div class="form-group">
+                    <label class="control-label ">@L("Parameters"):</label>
+                    <div  >
+                        <pre lang="js">{{vm.getFormattedParameters()}}</pre>
+                    </div>
+                </div>
+
+
+            </uib-tab>
+
+
+            <uib-tab heading="@L("ErrorState")">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <p class="form-control-static" ng-if="!vm.auditLog.exception">
+                                    <i class="fa fa-check-circle font-green"></i> @L("Success")
+                                </p>
+                                <pre ng-if="vm.auditLog.exception">{{vm.auditLog.exception}}</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+             
+            <uib-tab heading="接口返回">
+                <div class="form-group">
+                    <label class="control-label ">返回结果（只记录结果的前200个字符）</label>
+                    <div>
+                        <pre lang="js">{{vm.auditLog.returnValue}}</pre>
+                    </div>
+                </div>
+            </uib-tab>
+
+        </uib-tabset>
+
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="vm.close()">@L("Close")</button>
+    </div>
+</div>

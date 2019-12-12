@@ -1,0 +1,37 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title">
+        <span>登机</span> 
+    </h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-3"  style="text-align:center;">
+            <div class="radio-list">
+                <label>
+                    <input type="radio" name="gender" value="BOR_N"     ng-model="vm.paramters.playCommand" /> 正常登机
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="URBOR" ng-model="vm.paramters.playCommand" /> 催促登机
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="BOR_G" ng-model="vm.paramters.playCommand" /> 改登机口
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="READY" ng-model="vm.paramters.playCommand" /> 登机结束
+                </label>
+            </div> 
+        </div>
+        <div class="col-md-9">
+            <div class="form-group"  ng-if="vm.paramters.playCommand!='READY'" >
+                <label class="control-label">登机口</label>
+                <select class="form-control edited" ng-model="vm.paramters.gateCode">
+                    <option ng-repeat="item in vm.gates" value="{{item.code}}">{{item.content}}</option>
+                </select>
+            </div>           
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button ng-disabled="vm.loading" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
+    <button type="submit" button-busy="vm.loading" busy-text="加载中" class="btn btn-primary blue" ng-click="vm.play()" ng-disabled="createOrEditForm.$invalid"><i class="fa fa-save"></i> <span>播放</span></button>
+</div>

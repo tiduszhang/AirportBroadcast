@@ -1,0 +1,71 @@
+﻿using System.Collections.Generic;
+using Abp.Configuration;
+
+namespace AirportBroadcast.Configuration
+{
+    /// <summary>
+    /// Defines settings for the application.
+    /// See <see cref="AppSettings"/> for setting names.
+    /// </summary>
+    public class TtsSettingProvider : SettingProvider
+    {
+        public override IEnumerable<SettingDefinition> GetSettingDefinitions(SettingDefinitionProviderContext context)
+        {
+            return new[]
+                   {
+                        new SettingDefinition(AppSettings.PayMethod.Subject, "畅途网自助售票机 {0}-{1} {2}张 保险({3})"),
+                        new SettingDefinition(AppSettings.PayMethod.AliPay.ServiceUrl, "https://openapi.alipaydev.com/gateway.do"),
+                        new SettingDefinition(AppSettings.PayMethod.AliPay.AppId, "2016101900724811"),
+                        new SettingDefinition(AppSettings.PayMethod.AliPay.PrivateKeyPem, @"MIICXAIBAAKBgQC/2ct/I8wYpg3jnO2L1UvaVat+32JWXxTk7szTSZDLY8JMuK6c
++1Hsprgx/P/M5eTPxOaqO86XafoaToCLf8X4F2y1C3FvAMm/NOxO2cbdYHZu0wgD
+JBtWHMCcn/wDpC5yvvHmrW6+nfldhwNeJ18ICLZoYwlvd4v8kPv+3MkxZwIDAQAB
+AoGAI7d/bC8U6y3W/h4UF2lhUseKQveBjkTrVeejWF6kx0jOPoxPbchYKy+qsRvB
+37qZC5lDvEOgJY5EUqt0wQPLrh5UeCjX6yko8c92PwV1rXWjKPhjXDwtuGn9bcv4
+v45+xvjkS1N64Xw0P1x3/MSLHEp+mM6UF3V8jhDsNcPRF6ECQQD4xh2jE8Ty9UvJ
+O13dOq64dJQz9YrVQG5QKvi6Ron/ppWvVUDOsbHgOsi4EHSfOCD1DMLsRLIqtZns
+O0IHKwHxAkEAxWxl/SA1TyTwIOO6dfSBgdQETQaqQS0EIXsEyIL7Tj8GjJMN/KeA
+iddD3cE438u9ZOLLb/5VfZlbwGFW7MOQ1wJBAMf7Itn0S29vpsOWWKc9xDR9aqG2
+MiuphsQlNxsvF0IO3Oc8ZkOB7tatCquEduuDSGMVJiCePIc+wwR2wmZWuVECQClN
+j1zQszZ2pOJMooLw/3M49xliTpZKI7YZdZu5g3gQSX95eJCmPocYCTPIq+xuRJZp
+uGQa0qnvPrnV44ivNYsCQEnmVmtGaKEU6Ev/F0VvtD2JfNf3JV5pqkrF7vb8b4Hf
+Y3dSJEznzwD8h6gI4/oPBklTUcP8Df3yHtNbd4erVU8="),
+                        new SettingDefinition(AppSettings.PayMethod.AliPay.AlipayPulicKey, @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDIgHnOn7LLILlKETd6BFRJ0GqgS2Y3mn1wMQmyh9zEyWlz5p1zrahRahbXAfCfSqshSNfqOmAQzSHRVjCqjsAw1jyqrXaPdKBmr90DIpIxmIyKXv4GGAkPyJ/6FTFY99uhpiq0qadD/uSzQsefWo0aTvP/65zi3eof7TcZ32oWpwIDAQAB"),
+                        new SettingDefinition(AppSettings.PayMethod.WxPay.NotifyUrl, "http://cangyun.changtu.com/notify"),
+                        new SettingDefinition(AppSettings.PayMethod.WxPay.AppId, "wx3dadc3e61e9d75b0"),
+                        new SettingDefinition(AppSettings.PayMethod.WxPay.MchId, "1239174002"),
+                        new SettingDefinition(AppSettings.PayMethod.WxPay.Key, "ttschangtu2015ttschangtu20150605"),
+                        new SettingDefinition(AppSettings.PayMethod.WxPay.SslcertPath, "App_Data/cert/apiclient_cert.p12"),
+                        new SettingDefinition(AppSettings.BaoXianConsts.Url, "http://223.68.186.21:8081/api/services/app/submit"),//锁：'/Process' 、  退：'/CancelProcess'
+                        new SettingDefinition(AppSettings.BaoXianConsts.Key, "10086"),
+                        new SettingDefinition(AppSettings.BaoXianConsts.Pid, "10086"),
+                        new SettingDefinition(AppSettings.PayMethod.AliTripPay.AppKey,"24928552"),
+                        new SettingDefinition(AppSettings.PayMethod.AliTripPay.AppSecret,"7786942a7ef06d10bf60baac8871a9db"),
+                        new SettingDefinition(AppSettings.PayMethod.AliTripPay.ServiceUrl,"http://gw.api.taobao.com/router/rest"),
+                        new SettingDefinition(AppSettings.PayMethod.AliTripPay.SessionKey,"61005293981404782fd988d5df418aee5588b125f7b9c282843869674"),
+                        new SettingDefinition(AppSettings.PayMethod.CCBPay.MERCHANTID,"105148000001925"),
+                        new SettingDefinition(AppSettings.PayMethod.CCBPay.POSID,"013378604"),
+                        new SettingDefinition(AppSettings.PayMethod.CCBPay.BRANCHID,"130000000"),
+                        new SettingDefinition(AppSettings.PayMethod.CCBPay.QUPWD,"2068567"),
+                        new SettingDefinition(AppSettings.PayMethod.CCBPay.USERID,"105148000001925-002"),
+                        new SettingDefinition(AppSettings.PayMethod.CCBPay.PASSWORD,"tts0001"),
+                        new SettingDefinition(AppSettings.PayMethod.CCBPay.QueryUrl,"https://ibsbjstar.ccb.com.cn/app/ccbMain?"),
+                        new SettingDefinition(AppSettings.PayMethod.CCBPay.CreateUrl,"https://ibsbjstar.ccb.com.cn/CCBIS/ccbMain?CCB_IBSVersion=V6&"),
+                        new SettingDefinition(AppSettings.PayMethod.CCBPay.PUB,"c55b9a5b989244ad1b93980d020111"),
+<<<<<<< HEAD
+
+
+
+                        new SettingDefinition(AppSettings.PushToOnline.CityId, "0"),
+                        new SettingDefinition(AppSettings.PushToOnline.OnLineUrl, "0"),
+                        new SettingDefinition(AppSettings.PushToOnline.PrivateKey, "0"),
+                        new SettingDefinition(AppSettings.PushToOnline.StationId, "0")
+=======
+                        new SettingDefinition(AppSettings.PayMethod.CCBPay.SocketIp,"172.19.3.81"),
+                        new SettingDefinition(AppSettings.PayMethod.CCBPay.SocketPort,"12344"),
+>>>>>>> 65258bda65db9eedd2e7c8cbd128c0b248217efa
+
+
+            };
+        }
+    }
+}

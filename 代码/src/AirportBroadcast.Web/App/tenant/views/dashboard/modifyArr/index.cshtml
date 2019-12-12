@@ -1,0 +1,53 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title">
+        <span>进港</span>
+    </h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-3" style="text-align:center;">
+            <div class="radio-list">
+                <label>
+                    <input type="radio" name="gender" value="EARR" ng-model="vm.paramters.playCommand" /> 正常航班预告
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="ARR" ng-model="vm.paramters.playCommand" /> 航班到达通知
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="FBAG" ng-model="vm.paramters.playCommand" /> 航班行李提取
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="DLY_J" ng-model="vm.paramters.playCommand" /> 延误航班预告
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="CAN_J" ng-model="vm.paramters.playCommand" /> 航班取消通知
+                </label>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="form-group" ng-if="vm.paramters.playCommand=='FBAG'">
+                <label class="control-label">行李转盘</label>
+                <select class="form-control edited" ng-model="vm.paramters.turnPlateCode">
+                    <option ng-repeat="item in vm.turnPlates" value="{{item.code}}">{{item.content}}</option>
+                </select>
+            </div>
+            <div class="form-group" ng-if="vm.paramters.playCommand=='DLY_J' || vm.paramters.playCommand=='CAN_J'">
+                <label class="control-label">预计到达时间（可不输入）</label>
+                <input type="time" class="form-control" ng-model="vm.chooseTime">
+            </div>
+
+            <div class="form-group" ng-if="vm.paramters.playCommand=='DLY_J' || vm.paramters.playCommand=='CAN_J'">
+                <label class="control-label">{{ vm.paramters.playCommand=='DLY_J'?"延误原因":"取消原因" }}</label>
+                <select class="form-control edited" multiple="multiple" size="5" ng-model="vm.chooseReasions">
+                    <option ng-repeat="item in vm.reasions" value="{{item.code}}">
+                        <text class="checkbox"> {{item.content}}</text>
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button ng-disabled="vm.loading" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
+    <button type="submit" button-busy="vm.loading" busy-text="加载中" class="btn btn-primary blue" ng-click="vm.play()" ng-disabled="createOrEditForm.$invalid"><i class="fa fa-save"></i> <span>播放</span></button>
+</div>

@@ -1,0 +1,27 @@
+﻿<div>
+    <form name="createOrEditForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>@L("Pages_AudioSets_TopPwrPort")</span>
+            </h4>
+        </div>
+        <div class="modal-body">
+
+            <div class="md-checkbox-list">
+                <div class="md-checkbox" ng-repeat="item in vm.entity">
+                    <input id="EditUser_{{item.id}}" class="md-check" type="checkbox" name="isCanSetAllCarryStation{{item.id}}" ng-model="item.isChoose">
+                    <label for="EditUser_{{item.id}}">
+                        <span class="inc"></span>
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        {{item.code}} - {{item.name}} （{{item.remark}}）
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
+            <button type="submit" button-busy="vm.saving" busy-text="保存中" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="createOrEditForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+﻿<div ng-controller="common.views.baseinfo.audioLanguage.index as vm">
+    <div class="row margin-bottom-5">
+        <div class="col-xs-6">
+            <div class="page-head">
+                <div class="page-title">
+                    <h1>
+                        <span>语种管理</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 text-right">
+            <button class="btn btn-primary blue" ng-click="vm.create()"><i class="fa fa-plus"></i> 添加语种</button>
+        </div>
+    </div>
+    <div class="portlet light margin-bottom-0">
+        <div class="portlet-body">
+                    <div class="form-body" enter-key="vm.getUsers()">
+                        <div class="row margin-bottom-10">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <button class="btn btn-default btn-block" ng-click="vm.getAll()"><i class="fa fa-refresh"></i> @L("Refresh")</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <div busy-if="vm.loading">
+                <div ui-grid="vm.options" ui-grid-resize-columns></div>
+            </div>
+        </div>
+    </div>
+</div>

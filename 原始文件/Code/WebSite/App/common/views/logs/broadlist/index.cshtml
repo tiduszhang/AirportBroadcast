@@ -1,0 +1,47 @@
+﻿ 
+<div ng-controller="common.views.play.broadlist.index as vm">
+    <div class="row margin-bottom-5">
+        <div class="col-xs-6">
+            <div class="page-head">
+                <div class="page-title">
+                    <h1>
+                        <span>播放列表</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 text-right">
+            <button class="btn btn-primary blue" ng-click="vm.playlist()"><i class="fa fa-plus"></i> 查看播放列表</button>
+        </div>
+    </div>
+    @*<div class='input-group date' datetimepicker id='datetimepicker1'>
+            <input type='text' class="form-control" ng-model="dateOne" />
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-time"></span>
+            </span>
+        </div>*@
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="control-label">延误时间</label>
+            <input type="text" id="startTime1" name="startTime1"
+                   class="form-control timepicker" ng-model="dateOne">
+        </div>
+        <div class="form-group">
+            <label class="control-label">延误时间</label>
+            <input type="time"
+                   class="form-control">
+        </div>
+    </form>
+    <div style="margin-top:20px;">
+        <button class="btn btn-primary blue" ng-click="vm.edit(null,'modifyCheckIn')"><i class="fa fa-plus"></i> 值机</button>
+        <button class="btn btn-primary blue" ng-click="vm.edit(null,'modifyBorad')"><i class="fa fa-plus"></i> 登机</button>
+        <button class="btn btn-primary blue" ng-click="vm.edit(null,'modifyArr')"><i class="fa fa-plus"></i> 进港</button>
+        <button class="btn btn-primary blue" ng-click="vm.edit(null,'modifyDep')"><i class="fa fa-plus"></i> 出港</button>
+    </div>
+   
+
+
+
+
+</div>
+

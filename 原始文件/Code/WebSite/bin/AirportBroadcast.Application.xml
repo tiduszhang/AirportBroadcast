@@ -1,0 +1,1662 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AirportBroadcast.Application</name>
+    </assembly>
+    <members>
+        <member name="T:AirportBroadcast.AbpZeroTemplateApplicationModule">
+            <summary>
+            Application layer module of the application.
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.AbpZeroTemplateAppServiceBase">
+            <summary>
+            All application services in this application is derived from this class.
+            We can add common application service methods here.
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.ActiveMQListener.ActiveMQUrl">
+            <summary>
+            队列IP：以机场所分配的服务器IP为准
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.ActiveMQ.ActiveMQListener.Initialize(System.Int32)">
+            <summary>
+            初始化ActiveMQ
+            </summary>
+            <param name="flag">0表示主链接，1 表示航显链接，-1表示关闭ActiveMQ</param>
+        </member>
+        <member name="M:AirportBroadcast.ActiveMQ.ActiveMQListener.Initialize_1(System.Int32)">
+            <summary>
+            初始化ActiveMQ
+            </summary>
+            <param name="flag">0表示主链接，1 表示航显链接，-1表示关闭ActiveMQ</param>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Airshowtype">
+            <summary>
+            航显接口类型
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Routeoid">
+            <summary>
+            航班主键  96580
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Shareflightno">
+            <summary>
+            共享航班号
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FlightDateTime">
+            <summary>
+            航班日期
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.ExecutionDateTime">
+            <summary>
+            航班执行日期
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FlightNo2">
+            <summary>
+            航班号 JD5608
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FlightNo3">
+            <summary>
+            三字码航班号 CBJ5608
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.AirlineCode2">
+            <summary>
+            航司二字码 JD
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.AirlineCode3">
+            <summary>
+            航司三字码 CBJ
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FlightNum">
+            <summary>
+            航班号（除航司部分） 5608
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FlightMssion">
+            <summary>
+            航班性质 W/Z
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FlightType">
+            <summary>
+            航班类型 D
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.DepFIV1NO3">
+            <summary>
+            出港经停1三字码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.DepFIV1NO4">
+            <summary>
+            出港经停1四字码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.DepFIV2NO3">
+            <summary>
+            出港经停2三字码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.DepFIV2NO4">
+            <summary>
+            出港经停2四字码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.ArrFIV1NO3">
+            <summary>
+            进港经停1三字码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.ArrFIV1NO4">
+            <summary>
+            进港经停1四字码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.ArrFIV2NO3">
+            <summary>
+            进港经停2三字码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.ArrFIV2NO4">
+            <summary>
+            进港经停2四字码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Fiv1No3">
+            <summary>
+            经停1三字码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Fiv1No4">
+            <summary>
+            经停1四字码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Fiv2No3">
+            <summary>
+            经停2三字码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Fiv2No4">
+            <summary>
+            经停2四字码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.ForgNo3">
+            <summary>
+            起场三字码 CKG
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.ForgNo4">
+            <summary>
+            起场四字码	ZUCK
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FestNo3">
+            <summary>
+            落场三字码	LJG
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FestNo4">
+            <summary>
+            落场四字码	ZPLJ
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.DepPlanTime">
+             <summary>
+             计划起飞时间	2018-02-26T09:10:00 	1753-01-01T00:00:00
+            表示该项时间没有值
+             </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.DepForecastTime">
+            <summary>
+            预计起飞时间	2018-02-26T09:12:00
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.DepartTime">
+            <summary>
+            实际起飞时间	1753-01-01T00:00:00
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.ArrPlanTime">
+            <summary>
+            计划落地时间	2018-02-26T11:00:00
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.ArrForecastTime">
+            <summary>
+            预计落地时间	2018-02-26T11:00:00
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.ArriveTime">
+            <summary>
+            实际落地时间	1753-01-01T00:00:00(表示为空)
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FlightStatus">
+            <summary>
+            航班状态	FPL	对应内容见下表
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FlightStatus_Cn">
+            <summary>
+            航班状态	 
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Gate">
+            <summary>
+            登机口	11
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Gateopentime">
+            <summary>
+            登机口计划开启时间	2018-02-26T08:40:00
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Gateclosetime">
+            <summary>
+            登机口计划关闭时间	2018-02-26T09:00:00
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Carousel">
+            <summary>
+            行李转盘	3
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.CheckinLoad">
+            <summary>
+            值机岛
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.CheckinCounter">
+            <summary>
+            值机柜台
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.CheckinTimeStart">
+            <summary>
+            值机开始时间
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.CheckinTimeEnd">
+            <summary>
+            值机结束时间
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FlightCirculationStatus">
+            <summary>
+            航班流转状态	SCHD
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FlightAbnormalReason">
+            <summary>
+            异常原因
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Freg">
+            <summary>
+            机号	B6415
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.DeporArrCode">
+            <summary>
+            进出港标记	J
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.LocalAirportCode">
+            <summary>
+            本场代码	LJG
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Xlsjtime">
+            <summary>
+            行李上架时间
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Xlxjtime">
+            <summary>
+            行李下架时间
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.RouteType">
+            <summary>
+            操作类型	MODIFY
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Playtime">
+            <summary>
+            播放次数
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Playarea">
+            <summary>
+            播放区域
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Playtype">
+            <summary>
+            播放类型
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Dlytype">
+            <summary>
+            延误类型
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Dlytime">
+            <summary>
+            延误时间
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Counterno">
+            <summary>
+            柜台号码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.TableName">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.TableSchema">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Ismixed">
+            <summary>
+            是否混合	False
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.FooterSql">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.WhereSql">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.ClientIp">
+            <summary>
+            客户端IP
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.ClientMachineName">
+            <summary>
+            客户端电脑名称
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.GroupSql">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.OrderSql">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.IsPrintAll">
+            <summary>
+            False
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.Operator">
+            <summary>
+            0
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.AirShowDataDto.GateOld">
+            <summary>
+            老的登记口
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.HandPlayDto.Aid">
+            <summary>
+            航显数据id
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.HandPlayDto.PlayCommand">
+             <summary>
+             操作命令
+            值机：CKI ， CKOFF
+            登机：BOR_N ， URBOR ，BOR_G，READY
+            出港：DLY_C ， CAN_C 
+            进港：EARR，ARR，FBAG，DLY_J，CAN_J
+             </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.HandPlayDto.CheckInCode">
+            <summary>
+            值机柜台Id
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.HandPlayDto.GateCode">
+            <summary>
+            登机口 ID
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.HandPlayDto.TurnPlateCode">
+            <summary>
+            行礼转盘 ID
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.HandPlayDto.ReasonCode">
+            <summary>
+            延误/取消 航班原因ID
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.HandPlayDto.ArrOrDepTime">
+            <summary>
+            预计 到达/起飞 时间，格式：HH:mm  例  19:30 或为空
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.ReceiveJsonDto.Content">
+            <summary>
+            具体内容
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.ActiveMQ.Dto.ReceiveJsonDto.ReciveTime">
+            <summary>
+            接受时间
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.AppConsts">
+            <summary>
+            Some consts used in the application.
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.AppConsts.DefaultPageSize">
+            <summary>
+            Default page size for paged requests.
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.AppConsts.MaxPageSize">
+            <summary>
+            Maximum allowed page size for paged requests.
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.AudioSets.dtos.AudioPlaySetDto.Code">
+            <summary>
+            航班扭转状态
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.AudioSets.dtos.AudioPlaySetTempleInputDto.Tid">
+            <summary>
+            明细Id
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.AudioSets.dtos.AudioPlaySetTempleInputDto.TempId">
+            <summary>
+            明细中的模版Id
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.AudioSets.dtos.AudioPlaySetTempleInputDto.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.AudioSets.dtos.UpdateDeviceListInputDto.DType">
+            <summary>
+            1：国内/地方，2：国际
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.AudioSets.dtos.AudioDeviceDto">
+            <summary>
+            声卡
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.AudioSets.dtos.AudioDeviceDto.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.AudioSets.dtos.AudioDeviceDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.AudioSets.dtos.AudioDeviceDto.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.AudioSets.dtos.TopPwrPortDto">
+            <summary>
+            TOP-PWR8电源控制器，各个端口
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.AudioSets.dtos.TopPwrPortDto.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.AudioSets.dtos.TopPwrPortDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.AudioSets.dtos.TopPwrPortDto.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioAirLineDto">
+            <summary>
+            航空公司代码
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioAirLineDto.Code">
+            <summary>
+            编号（航空公司代码前两位）
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioAirLineDto.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioCheckInDto">
+             <summary>
+            登机口
+             </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioCheckInDto.Code">
+            <summary>
+            编号 
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioCheckInDto.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioCityDto">
+            <summary>
+            城市
+            </summary> 
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioCityDto.Code">
+            <summary>
+            编号 
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioCityDto.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioConstDto">
+            <summary>
+            常用短语
+            </summary> 
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioConstDto.ConstNo">
+            <summary>
+            语音使用场景编号
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioConstDto.Remark">
+            <summary>
+            语音使用场景说明
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioDigitDto">
+            <summary>
+            数字
+            </summary>    
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioDigitDto.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioDigitDto.Remark">
+             <summary>
+            说明
+             </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioGateDto">
+             <summary>
+            登记门
+             </summary> 
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioGateDto.Code">
+            <summary>
+            编号 
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioGateDto.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioHourDto">
+            <summary>
+            小时
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioHourDto.Code">
+            <summary>
+            编号 
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioHourDto.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioLanguageDto">
+            <summary>
+            语种
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioLanguageDto.code">
+            <summary>
+            语种编号
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioLanguageDto.Name">
+            <summary>
+            语种名称
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioLanguageDto.Remark">
+            <summary>
+            语种说明
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioMiniteDto">
+            <summary>
+            分钟
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioMiniteDto.Code">
+            <summary>
+            编号 
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioMiniteDto.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioReasonDto">
+            <summary>
+            原因
+            </summary> 
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioReasonDto.Code">
+            <summary>
+            编号 
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioReasonDto.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioTemplteDto">
+            <summary>
+            语句模板带明细
+            </summary>    
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTemplteDto.Details">
+            <summary>
+            语句段明细
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioTemplteBaseDto">
+            <summary>
+            语句模板
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTemplteBaseDto.Type">
+            <summary>
+            类型编号
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTemplteBaseDto.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTemplteBaseDto.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTemplteBaseDto.LanguageId">
+            <summary>
+            语音文件对应的语种
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioTemplteDetailDto">
+            <summary>
+            模板明细
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTemplteDetailDto.IsParamter">
+            <summary>
+            是否为变量参数
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTemplteDetailDto.ParamterType">
+            <summary>
+            变量类型
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTemplteDetailDto.ConstId">
+            <summary>
+            常用语编号
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTemplteDetailDto.AudioConst">
+            <summary>
+            常用语
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTemplteDetailDto.TemplteId">
+            <summary>
+            模板编号
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTemplteDetailDto.Sort">
+            <summary>
+            排列序号
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Baseinfo.dtos.AudioTurnPlateDto">
+            <summary>
+            行李转盘
+            </summary> 
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTurnPlateDto.Code">
+            <summary>
+            编号 
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.AudioTurnPlateDto.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.BaseAudioEntityDto.FileName">
+            <summary>
+            文件名称（xxx.wav）
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.BaseAudioEntityDto.Path">
+            <summary>
+            文件所在目录（D:/xxx/xxx/）
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.BaseAudioEntityDto.Content">
+            <summary>
+            语音文件对应文字
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.BaseAudioEntityDto.ContentRemark">
+            <summary>
+            语音文件对应文字说明（汉语翻译）
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Baseinfo.dtos.BaseAudioEntityDto.LanguageId">
+            <summary>
+            语音文件对应的语种
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Auditing.AuditLogAndUser">
+            <summary>
+            A helper class to store an <see cref="P:AirportBroadcast.Auditing.AuditLogAndUser.AuditLog"/> and a <see cref="P:AirportBroadcast.Auditing.AuditLogAndUser.User"/> object.
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.Auditing.Exporting.ListExcelExporter.ExportToFile``1(System.Collections.Generic.List{``0},System.String,System.String[],System.String,System.String,System.Func{``0,System.Object}[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="listData"></param>
+            <param name="fileName"></param>
+            <param name="colnames"></param>
+            <param name="title"></param>
+            <param name="queryInfo"></param>
+            <param name="propertySelectors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AirportBroadcast.Authorization.Permissions.PermissionManagerExtensions.GetPermissionsFromNamesByValidating(Abp.Authorization.IPermissionManager,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets all permissions by names.
+            Throws <see cref="T:Abp.Runtime.Validation.AbpValidationException"/> if can not find any of the permission names.
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Authorization.Roles.IRoleAppService">
+            <summary>
+            Application service that is used by 'role management' page.
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Authorization.Roles.RoleAppService">
+            <summary>
+            Application service that is used by 'role management' page.
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Authorization.Users.Dto.UserListDto.IsCanSetAllCarryStation">
+            <summary>
+            是否可设置所有乘车站
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Authorization.Users.Dto.UserEditDto.Id">
+            <summary>
+            Set null to create a new user. Set user's Id to update a user
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Authorization.Users.Dto.UserEditDto.IsCanSetAllCarryStation">
+            <summary>
+            是否可设置所有乘车站
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Authorization.Users.LinkedUserDto.IsCanSetAllCarryStation">
+            <summary>
+            是否可设置所有乘车站
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Configuration.Host.Dto.GeneralSettingsEditDto.TimezoneForComparison">
+            <summary>
+            This value is only used for comparing user's timezone to default timezone
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Configuration.Tenants.Dto.PayMentSettingEditDto">
+            <summary>
+            支付方式设置
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Configuration.Tenants.Dto.AliPayDto.ServiceUrl">
+            <summary>
+            网关地址
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Configuration.Tenants.Dto.AliPayDto.AppId">
+            <summary>
+            Appid
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Configuration.Tenants.Dto.AliPayDto.PrivateKeyPem">
+            <summary>
+            私钥
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Configuration.Tenants.Dto.AliPayDto.AlipayPulicKey">
+            <summary>
+            支付宝公钥
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.Configuration.Tenants.Dto.AliPayDto.It_b_pay">
+            <summary>
+            支付宝过期时间
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.Configuration.Tenants.Dto.TenantSettingsEditDto.ValidateHostSettings">
+            <summary>
+            This validation is done for single-tenant applications.
+            Because, these settings can only be set by tenant in a single-tenant application.
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Dto.PagedResultOutputWithFooter`2">
+            <summary>
+            扩展 Abp分页类，添加页脚信息
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="K"></typeparam>
+        </member>
+        <member name="P:AirportBroadcast.Dto.PagedResultOutputWithFooter`2.Footer">
+            <summary>
+            页脚 信息
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Net.MimeTypes.MimeTypeNames">
+            <summary>
+            Common mime types. 
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXJavascript">
+            <summary>Used to denote the encoding necessary for files containing JavaScript source code. The alternative MIME type for this file type is text/javascript.</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.AudioL24">
+            <summary>24bit Linear PCM audio at 8-48kHz, 1-N channels; Defined in RFC 3190</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXShockwaveFlash">
+            <summary>Adobe Flash files for example with the extension .swf</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationOctetStream">
+            <summary>Arbitrary binary data.[5] Generally speaking this type identifies files that are not associated with a specific application. Contrary to past assumptions by software packages such as Apache this is not a type that should be applied to unknown files. In such a case, a server or application should not indicate a content type, as it may be incorrect, but rather, should omit the type in order to allow the recipient to guess the type.[6]</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationAtomXml">
+            <summary>Atom feeds</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.TextCss">
+            <summary>Cascading Style Sheets; Defined in RFC 2318</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.TextCmd">
+            <summary>commands; subtype resident in Gecko browsers like Firefox 3.5</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.TextCsv">
+            <summary>Comma-separated values; Defined in RFC 4180</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXDeb">
+            <summary>deb (file format), a software package format used by the Debian project</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.MultipartEncrypted">
+            <summary>Defined in RFC 1847</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.MultipartSigned">
+            <summary>Defined in RFC 1847</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.MessageHttp">
+            <summary>Defined in RFC 2616</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ModelExample">
+            <summary>Defined in RFC 4735</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXDvi">
+            <summary>device-independent document in DVI format</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXmlDtd">
+            <summary>DTD files; Defined by RFC 3023</summary>
+        </member>
+        <!-- 对于成员“F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationJavascript”忽略有格式错误的 XML 注释 -->
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationEcmascript">
+            <summary>ECMAScript/JavaScript; Defined in RFC 4329 (equivalent to application/javascript but with stricter processing rules)</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationEdifact">
+            <summary>EDI EDIFACT data; Defined in RFC 1767</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationEdiX12">
+            <summary>EDI X12 data; Defined in RFC 1767</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.MessagePartial">
+            <summary>Email; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.MessageRfc822">
+            <summary>Email; EML files, MIME files, MHT files, MHTML files; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.TextXml">
+            <summary>Extensible Markup Language; Defined in RFC 3023</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.VideoXFlv">
+            <summary>Flash video (FLV files)</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ImageGif">
+            <summary>GIF image; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.TextXGwtRpc">
+            <summary>GoogleWebToolkit data</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXGzip">
+            <summary>Gzip</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.TextHtml">
+            <summary>HTML; Defined in RFC 2854</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ImageVndMicrosoftIcon">
+            <summary>ICO image; Registered[9]</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ModelIges">
+            <summary>IGS files, IGES files; Defined in RFC 2077</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.MessageImdnXml">
+            <summary>IMDN Instant Message Disposition Notification; Defined in RFC 5438</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationJson">
+            <summary>JavaScript Object Notation JSON; Defined in RFC 4627</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationJsonPatch">
+            <summary>JavaScript Object Notation (JSON) Patch; Defined in RFC 6902</summary>
+        </member>
+        <!-- 对于成员“F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.TextJavascript”忽略有格式错误的 XML 注释 -->
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ImagePjpeg">
+            <summary>JPEG JFIF image; Associated with Internet Explorer; Listed in ms775147(v=vs.85) - Progressive JPEG, initiated before global browser support for progressive JPEGs (Microsoft and Firefox).</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ImageJpeg">
+            <summary>JPEG JFIF image; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.TextXJqueryTmpl">
+            <summary>jQuery template data</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationVndGoogleEarthKmlXml">
+            <summary>KML files (e.g. for Google Earth)</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXLatex">
+            <summary>LaTeX files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.VideoXMatroska">
+            <summary>Matroska open media format</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationVndOpenxmlformatsOfficedocumentSpreadsheetmlSheet">
+            <summary>Microsoft Excel 2007 files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationVndMsExcel">
+            <summary>Microsoft Excel files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationVndOpenxmlformatsOfficedocumentPresentationmlPresentation">
+            <summary>Microsoft Powerpoint 2007 files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationVndMsPowerpoint">
+            <summary>Microsoft Powerpoint files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationVndOpenxmlformatsOfficedocumentWordprocessingmlDocument">
+            <summary>Microsoft Word 2007 files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationMsword">
+            <summary>Microsoft Word files[15]</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.MultipartAlternative">
+            <summary>MIME Email; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.MultipartMixed">
+            <summary>MIME Email; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.MultipartRelated">
+            <summary>MIME Email; Defined in RFC 2387 and used by MHTML (HTML mail)</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.MultipartFormData">
+            <summary>MIME Webform; Defined in RFC 2388</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationVndMozillaXulXml">
+            <summary>Mozilla XUL files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.AudioMpeg">
+            <summary>MP3 or other MPEG audio; Defined in RFC 3003</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.AudioMp4">
+            <summary>MP4 audio</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.VideoMp4">
+            <summary>MP4 video; Defined in RFC 4337</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.VideoMpeg">
+            <summary>MPEG-1 video with multiplexed audio; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ModelMesh">
+            <summary>MSH files, MESH files; Defined in RFC 2077, SILO files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.AudioBasic">
+            <summary>mulaw audio at 8 kHz, 1 channel; Defined in RFC 2046</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.VideoOgg">
+            <summary>Ogg Theora or other video (with audio); Defined in RFC 5334</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.AudioOgg">
+            <summary>Ogg Vorbis, Speex, Flac and other audio; Defined in RFC 5334</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationOgg">
+            <summary>Ogg, a multimedia bitstream container format; Defined in RFC 5334</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXopXml">
+            <summary>OP</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationVndOasisOpendocumentGraphics">
+            <summary>OpenDocument Graphics; Registered[14]</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationVndOasisOpendocumentPresentation">
+            <summary>OpenDocument Presentation; Registered[13]</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationVndOasisOpendocumentSpreadsheet">
+            <summary>OpenDocument Spreadsheet; Registered[12]</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationVndOasisOpendocumentText">
+            <summary>OpenDocument Text; Registered[11]</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs12">
+            <summary>p12 files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs7Certificates">
+            <summary>p7b and spc files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs7Mime">
+            <summary>p7c files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs7Certreqresp">
+            <summary>p7r files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs7Signature">
+            <summary>p7s files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationPdf">
+            <summary>Portable Document Format, PDF has been in use for document exchange on the Internet since 1993; Defined in RFC 3778</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ImagePng">
+            <summary>Portable Network Graphics; Registered,[8] Defined in RFC 2083</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationPostscript">
+            <summary>PostScript; Defined in RFC 2046</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.VideoQuicktime">
+            <summary>QuickTime video; Registered[10]</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXRarCompressed">
+            <summary>RAR archive files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.AudioVndRnRealaudio">
+            <summary>RealAudio; Documented in RealPlayer Customer Support Answer 2559</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationRdfXml">
+            <summary>Resource Description Framework; Defined by RFC 3870</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationRssXml">
+            <summary>RSS feeds</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationSoapXml">
+            <summary>SOAP; Defined by RFC 3902</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXStuffit">
+            <summary>StuffIt archive files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ImageSvgXml">
+            <summary>SVG vector image; Defined in SVG Tiny 1.2 Specification Appendix M</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ImageTiff">
+            <summary>Tag Image File Format (only for Baseline TIFF); Defined in RFC 3302</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXTar">
+            <summary>Tarball files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.TextPlain">
+            <summary>Textual data; Defined in RFC 2046 and RFC 3676</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXFontTtf">
+            <summary>TrueType Font No registered MIME type, but this is the most commonly used</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.TextVcard">
+            <summary>vCard (contact information); Defined in RFC 6350</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.AudioVorbis">
+            <summary>Vorbis encoded audio; Defined in RFC 5215</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.AudioVndWave">
+            <summary>WAV audio; Defined in RFC 2361</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationFontWoff">
+            <summary>Web Open Font Format; (candidate recommendation; use application/x-font-woff until standard is official)</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.VideoWebm">
+            <summary>WebM Matroska-based open media format</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.AudioWebm">
+            <summary>WebM open media format</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.AudioXMsWax">
+            <summary>Windows Media Audio Redirector; Documented in Microsoft help page</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.AudioXMsWma">
+            <summary>Windows Media Audio; Documented in Microsoft KB 288102</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.VideoXMsWmv">
+            <summary>Windows Media Video; Documented in Microsoft KB 288102</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ModelVrml">
+            <summary>WRL files, VRML files; Defined in RFC 2077</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ModelX3DXml">
+            <summary>X3D ISO standard for representing 3D computer graphics, X3D XML files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ModelX3DBinary">
+            <summary>X3D ISO standard for representing 3D computer graphics, X3DB binary files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ModelX3DVrml">
+            <summary>X3D ISO standard for representing 3D computer graphics, X3DV VRML files</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationXhtmlXml">
+            <summary>XHTML; Defined by RFC 3236</summary>
+        </member>
+        <member name="F:AirportBroadcast.Net.MimeTypes.MimeTypeNames.ApplicationZip">
+            <summary>ZIP archive files; Registered[7]</summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.Dto.PlayerAgs.Flag">
+            <summary>
+            集合状态控制 
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.Dto.PlayStateDto.FileName">
+            <summary>
+            语音文件名（Guid.wav）
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.Dto.PlayStateDto.PlayState">
+            <summary>
+            播放状态 0开始播放 1播放结束
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.Dto.WavFileDto.Ret">
+            <summary>
+            返回标识 1成功，0失败
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.Dto.WavFileDto.FileName">
+            <summary>
+            生成语音文件名
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.Dto.WavFileDto.WavLength">
+            <summary>
+            合成语音时长
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.PlayAudio.IWavePlayer">
+            <summary>
+            Represents the interface to a device that can play a WaveFile
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.IWavePlayer.Play(AirportBroadcast.PlayAudio.Dto.PlayerAgs)">
+            <summary>
+            Begin playback
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.IWavePlayer.Stop">
+            <summary>
+            Stop playback
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.IWavePlayer.Pause">
+            <summary>
+            Pause Playback
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.IWavePlayer.Init(NAudio.Wave.IWaveProvider)">
+            <summary>
+            Initialise playback
+            </summary>
+            <param name="waveProvider">The waveprovider to be played</param>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.IWavePlayer.Volume">
+            <summary>
+            The volume 
+            1.0f is full scale
+            Note that not all implementations necessarily support volume changes
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.IWavePlayer.PlaybackState">
+            <summary>
+            Current playback state
+            </summary>
+        </member>
+        <member name="E:AirportBroadcast.PlayAudio.IWavePlayer.PlaybackStopped">
+            <summary>
+            Indicates that playback has gone into a stopped state due to 
+            reaching the end of the input stream or an error has been encountered during playback
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.PlayAudio.IWavePosition">
+            <summary>
+            Interface for IWavePlayers that can report position
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.IWavePosition.GetPosition">
+            <summary>
+            Position (in terms of bytes played - does not necessarily translate directly to the position within the source audio file)
+            </summary>
+            <returns>Position in bytes</returns>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.IWavePosition.OutputWaveFormat">
+            <summary>
+            Gets a <see cref="!:Wave.WaveFormat"/> instance indicating the format the hardware is using.
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.PlayAudio.WaveHeader">
+            <summary>
+            WaveHeader interop structure (WAVEHDR)
+            http://msdn.microsoft.com/en-us/library/dd743837%28VS.85%29.aspx
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveHeader.dataBuffer">
+            <summary>pointer to locked data buffer (lpData)</summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveHeader.bufferLength">
+            <summary>length of data buffer (dwBufferLength)</summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveHeader.bytesRecorded">
+            <summary>used for input only (dwBytesRecorded)</summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveHeader.userData">
+            <summary>for client's use (dwUser)</summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveHeader.flags">
+            <summary>assorted flags (dwFlags)</summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveHeader.loops">
+            <summary>loop control counter (dwLoops)</summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveHeader.next">
+            <summary>PWaveHdr, reserved for driver (lpNext)</summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveHeader.reserved">
+            <summary>reserved for driver</summary>
+        </member>
+        <member name="T:AirportBroadcast.PlayAudio.WaveInterop">
+            <summary>
+            MME Wave function interop
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveInterop.WaveInOutOpenFlags.CallbackNull">
+            <summary>
+            CALLBACK_NULL
+            No callback
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveInterop.WaveInOutOpenFlags.CallbackFunction">
+            <summary>
+            CALLBACK_FUNCTION
+            dwCallback is a FARPROC 
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveInterop.WaveInOutOpenFlags.CallbackEvent">
+            <summary>
+            CALLBACK_EVENT
+            dwCallback is an EVENT handle 
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveInterop.WaveInOutOpenFlags.CallbackWindow">
+            <summary>
+            CALLBACK_WINDOW
+            dwCallback is a HWND 
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveInterop.WaveInOutOpenFlags.CallbackThread">
+            <summary>
+            CALLBACK_THREAD
+            callback is a thread ID 
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveInterop.WaveMessage.WaveInOpen">
+            <summary>
+            WIM_OPEN
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveInterop.WaveMessage.WaveInClose">
+            <summary>
+            WIM_CLOSE
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveInterop.WaveMessage.WaveInData">
+            <summary>
+            WIM_DATA
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveInterop.WaveMessage.WaveOutClose">
+            <summary>
+            WOM_CLOSE
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveInterop.WaveMessage.WaveOutDone">
+            <summary>
+            WOM_DONE
+            </summary>
+        </member>
+        <member name="F:AirportBroadcast.PlayAudio.WaveInterop.WaveMessage.WaveOutOpen">
+            <summary>
+            WOM_OPEN
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.PlayAudio.WaveOutBuffer">
+            <summary>
+            A buffer of Wave samples for streaming to a Wave Output device
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutBuffer.#ctor(System.IntPtr,System.Int32,NAudio.Wave.IWaveProvider,System.Object)">
+            <summary>
+            creates a new wavebuffer
+            </summary>
+            <param name="hWaveOut">WaveOut device to write to</param>
+            <param name="bufferSize">Buffer size in bytes</param>
+            <param name="bufferFillStream">Stream to provide more data</param>
+            <param name="waveOutLock">Lock to protect WaveOut API's from being called on >1 thread</param>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutBuffer.Finalize">
+            <summary>
+            Finalizer for this wave buffer
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutBuffer.Dispose">
+            <summary>
+            Releases resources held by this WaveBuffer
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutBuffer.Dispose(System.Boolean)">
+            <summary>
+            Releases resources held by this WaveBuffer
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutBuffer.OnDone">
+            this is called by the WAVE callback and should be used to refill the buffer
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.WaveOutBuffer.InQueue">
+            <summary>
+            Whether the header's in queue flag is set
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.WaveOutBuffer.BufferSize">
+            <summary>
+            The buffer size in bytes
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.PlayAudio.WaveOutEvent">
+            <summary>
+            Alternative WaveOut class, making use of the Event callback
+            </summary>
+        </member>
+        <member name="E:AirportBroadcast.PlayAudio.WaveOutEvent.PlaybackStopped">
+            <summary>
+            Indicates playback has stopped automatically
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.WaveOutEvent.DesiredLatency">
+            <summary>
+            Gets or sets the desired latency in milliseconds
+            Should be set before a call to Init
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.WaveOutEvent.NumberOfBuffers">
+            <summary>
+            Gets or sets the number of buffers used
+            Should be set before a call to Init
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.WaveOutEvent.DeviceNumber">
+            <summary>
+            Gets or sets the device number
+            Should be set before a call to Init
+            This must be between -1 and <see>DeviceCount</see> - 1.
+            -1 means stick to default device even default device is changed
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutEvent.#ctor">
+            <summary>
+            Opens a WaveOut device
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutEvent.Init(NAudio.Wave.IWaveProvider)">
+            <summary>
+            Initialises the WaveOut device
+            </summary>
+            <param name="waveProvider">WaveProvider to play</param>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutEvent.Play(AirportBroadcast.PlayAudio.Dto.PlayerAgs)">
+            <summary>
+            Start playing the audio from the WaveStream
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutEvent.Pause">
+            <summary>
+            Pause the audio
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutEvent.Resume">
+            <summary>
+            Resume playing after a pause from the same position
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutEvent.Stop">
+            <summary>
+            Stop and reset the WaveOut device
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutEvent.GetPosition">
+            <summary>
+            Gets the current position in bytes from the wave output device.
+            (n.b. this is not the same thing as the position within your reader
+            stream - it calls directly into waveOutGetPosition)
+            </summary>
+            <returns>Position in bytes</returns>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.WaveOutEvent.OutputWaveFormat">
+            <summary>
+            Gets a <see cref="!:Wave.WaveFormat"/> instance indicating the format the hardware is using.
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.WaveOutEvent.PlaybackState">
+            <summary>
+            Playback State
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.WaveOutEvent.Volume">
+            <summary>
+            Volume for this device 1.0 is full scale
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutEvent.Dispose">
+            <summary>
+            Closes this WaveOut device
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutEvent.Dispose(System.Boolean)">
+            <summary>
+            Closes the WaveOut device and disposes of buffers
+            </summary>
+            <param name="disposing">True if called from <see>Dispose</see></param>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WaveOutEvent.Finalize">
+            <summary>
+            Finalizer. Only called when user forgets to call <see>Dispose</see>
+            </summary>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.Audio.DeviceId">
+            <summary>
+            设备编号
+            </summary>
+            <remarks>当前播放器的声卡编号</remarks>
+            <value>整型</value>
+        </member>
+        <member name="P:AirportBroadcast.PlayAudio.Audio.DeviceList">
+            <summary>
+            声卡列表
+            </summary>
+            <value>以\r\n分隔的文本</value>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.Win32.MC_Free">
+            <summary>
+            释放资源
+            </summary>
+            <remarks>释放当前播放器资源</remarks>
+            <returns>0:成功　其他：失败</returns>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.Win32.MC_Close(System.Int32)">
+            <summary>
+            关闭声卡
+            </summary>
+            <remarks>关闭当前播放的声卡。</remarks>
+            <param name="PlayerID">声卡编号</param>
+            <returns>0:成功　其他：失败</returns>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.Win32.MC_GetDeviceListVB">
+            <summary>
+            获取声卡列表
+            </summary>
+            <remarks>直接返回，以回车换行分隔。</remarks>
+            <returns>声卡列表</returns>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WavCombine.ClearPlayQuenue">
+            <summary>
+            清除播放队列 对外 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WavCombine.Concatenate(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            生成wav文件  对外
+            </summary>
+            <param name="sourceFiles">源文件</param>
+            <returns>返回生成之后的wav文件路径</returns>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WavCombine.Player(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            播放  对外
+            </summary>
+            <param name="fullFileName">播放文件路径</param>
+            <param name="playerDevice">播放声卡</param>
+            <param name="ports">播放端口 00011001 表示4.5.8端口打开 </param>
+            <param name="priority">优先级 数值越大 优先级越高</param>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WavCombine.PortState(System.String)">
+            <summary>
+            判断所在端口状态  是否可播放
+            </summary>
+            <param name="ports">00011001 表示4.5.8端口打开 </param>
+            <returns></returns>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WavCombine.PlayAudio1">
+            <summary>
+            播放音频
+            </summary>
+            <param name="fullFileName">播放的语音文件地址</param>
+            <param name="playerNum">播放通道  A0，A1等</param>
+            <param name="ports">播放端口 1,2,3等</param>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WavCombine.PlayAudio">
+            <summary>
+            播放音频
+            </summary>
+            <param name="fullFileName">播放的语音文件地址</param>
+            <param name="playerNum">播放通道  A0，A1等</param>
+            <param name="ports">播放端口 1,2,3等</param>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WavCombine.WavePlayerOnPlaybackStopped(System.Object,NAudio.Wave.StoppedEventArgs)">
+            <summary>
+            播放完成事件
+            </summary>
+            <param name="sender"></param>
+            <param name="stoppedEventArgs"></param>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WavCombine.Art_Player(System.String,System.String,System.String)">
+            <summary>
+            人工插播  其余队列全部清空
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WavCombine.StopAllPlayer">
+            <summary>
+            强制关闭所有在播语音
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.PlayAudio.WavCombine.GetVoiceDevice">
+            <summary>
+            获取可用声卡数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AirportBroadcast.Application.AutoPlayGetLuaTask">
+            <summary>
+            自动播放行李提取
+            </summary>
+        </member>
+        <member name="T:AirportBroadcast.Application.RemoveLogsTask">
+            <summary>
+            自动播放行李提取
+            </summary>
+        </member>
+        <member name="M:AirportBroadcast.Utility.DECHelper.DesEncrypt(System.String)">
+            <summary>
+            DES加密
+            </summary>
+            <param name="encryptString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AirportBroadcast.Utility.DECHelper.DesDecrypt(System.String)">
+            <summary>
+            DES解密
+            </summary>
+            <param name="decryptString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AirportBroadcast.Utility.VoiceBroadcastUtil.PlayText(System.String)">
+            <summary>
+            播放文本
+            </summary>
+            <param name="textStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AirportBroadcast.Utility.PinYinHelper">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

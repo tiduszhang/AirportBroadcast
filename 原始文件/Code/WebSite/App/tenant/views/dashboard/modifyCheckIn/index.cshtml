@@ -1,0 +1,41 @@
+﻿<form name="createOrEditForm" role="form" novalidate class="form-validation">
+
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span>值机</span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-4" style="text-align:center;">
+                <div class="radio-list">
+                    <label>
+                        <input type="radio" name="gender" value="CKI" ng-model="vm.paramters.playCommand"/> 开始办理乘机手续
+                    </label>
+                    @*<label>
+                            <input type="radio" name="gender" value="DLY" ng-model="vm.paramters.playCommand" /> 催促办理乘机手续
+                        </label>*@
+                    <label>
+                        <input type="radio" name="gender" value="CKOFF" ng-model="vm.paramters.playCommand" /> 结束办理乘机手续
+                    </label>
+
+                    @*<label>
+                            <input type="radio" name="gender" value="DLY" ng-model="vm.paramters.playCommand" /> 推迟办理乘机手续
+                        </label>*@
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="form-group" ng-if="vm.paramters.playCommand!='CKOFF'">
+                    <label class="control-label">值机柜台</label>
+                    <select class="form-control edited" ng-model="vm.paramters.checkInCode">
+                        <option ng-repeat="item in vm.checkins" value="{{item.code}}">{{item.content}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button ng-disabled="vm.loading" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
+        <button type="submit" button-busy="vm.loading" busy-text="加载中" class="btn btn-primary blue" ng-click="vm.play()" ng-disabled="createOrEditForm.$invalid || !vm.commentGrade"><i class="fa fa-save"></i> <span>播放</span></button>
+    </div>
+</form>

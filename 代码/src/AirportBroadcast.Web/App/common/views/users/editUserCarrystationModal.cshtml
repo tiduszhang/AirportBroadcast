@@ -1,0 +1,31 @@
+﻿@using Abp.Authorization.Users
+<div>
+    <form name="userCreateOrEditForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span  >编辑用户{{vm.userName}}管理客运站</span> 
+            </h4>
+        </div>
+        <div class="modal-body">
+            <uib-tabset class="tab-container tabbable-line">
+                <uib-tab heading="@L("UserInformations")">                     
+                    <div class="md-checkbox-list">
+                         <div class="md-checkbox" ng-repeat="item in vm.carryStations">
+                            <input id="EditUser_{{item.cid}}" class="md-check" type="checkbox" name="isCanSetAllCarryStation{{item.cid}}" ng-model="item.isSelected">
+                            <label for="EditUser_{{item.cid}}">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                 {{item.cname}}
+                            </label>
+                        </div>                       
+                    </div>
+                </uib-tab>              
+            </uib-tabset>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">@L("Cancel")</button>
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="userCreateOrEditForm.$invalid"><i class="fa fa-save"></i> <span>@L("Save")</span></button>
+        </div>
+    </form>
+</div>

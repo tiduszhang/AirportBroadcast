@@ -1,0 +1,1 @@
+regsvr32.exe "D:\MyJob\洛普（南京）\广播系统\淮安机场\接口文档\消息中间件示例\FMS\MSFLXGRD.OCX" 

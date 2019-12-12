@@ -1,0 +1,42 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title">
+        <span>查看与编辑模板语句【{{vm.entity.type}}】 </span>
+    </h4>
+</div>
+<div class="modal-body">
+    <div class="portlet light margin-bottom-0">
+        <div class="portlet-body">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <button class="btn btn-default blue btn-block" ng-click="vm.addParamter()">
+                            <i class="fa fa-plus"></i> 添加变量
+                        </button>
+                    </div>
+                </div>
+                 <div class="col-md-4">
+                    <div class="form-group">
+                        <button class="btn btn-default blue btn-block" ng-click="vm.addConst()">
+                            <i class="fa fa-plus"></i> 添加常用语
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+
+                        <button class="btn btn-default btn-block " ng-click="vm.init()"><i class="fa fa-refresh"></i> 刷新</button>
+                    </div>
+                </div>
+            </div>
+            <div busy-if="vm.loading">
+                <div ui-grid="vm.options" ui-grid-resize-columns></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="vm.cancel()">关闭</button>
+
+</div>

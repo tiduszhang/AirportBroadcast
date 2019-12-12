@@ -1,0 +1,69 @@
+﻿<div>
+    <form name="createOrEditForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span ng-if="vm.entity.id">编辑分钟: {{vm.entity.code}}</span>
+                <span ng-if="!vm.entity.id">添加分钟</span>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <uib-tabset class="tab-container tabbable-line">
+                <uib-tab heading="基本信息">
+                    <div class="row">
+                        <div class="col col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label no-hint  margin-bottom-0">
+                                <label>语种</label>                                 
+                                <select class="form-control edited"
+                                        ng-model="vm.entity.languageId" 
+                                        ng-options="x.id as x.name for x in vm.languages" required></select>
+                            </div>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label no-hint margin-bottom-0">
+                                <label>编号</label>
+                                <input type="text" class="form-control edited" ng-model="vm.entity.code" required />
+                            </div>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label no-hint margin-bottom-0">
+                                <label>文件名</label>
+                                <input type="text" class="form-control edited" ng-model="vm.entity.fileName" required />
+                            </div>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label no-hint  margin-bottom-0">
+                                <label>文件目录（项目/Content/Audios/下的文件夹，例如：zh/airline/）</label>
+                                <input type="text" class="form-control edited" ng-model="vm.entity.path" required />
+                            </div>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label no-hint  margin-bottom-0">
+                                <label>语音文字</label>
+                                <input type="text" class="form-control edited" ng-model="vm.entity.content" required />
+                            </div>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label no-hint  margin-bottom-0">
+                                <label>语音文字说明（翻译）</label>
+                                <input type="text" class="form-control edited" ng-model="vm.entity.contentRemark"  />
+                            </div>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label no-hint  margin-bottom-0">
+                                <label>说明</label>
+                                <input type="text" class="form-control edited" ng-model="vm.entity.remark" />
+                            </div>
+                        </div>
+                    </div>
+                   
+                    
+                </uib-tab>         
+            </uib-tabset>
+        </div>
+        <div class="modal-footer">
+            <button   type="button" class="btn btn-default" ng-click="vm.refresh()">refresh</button>
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
+            <button type="submit" button-busy="vm.saving" busy-text="保存中" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="createOrEditForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,83 @@
+﻿<div>
+    <form name="createOrEditForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>添加变量</span>
+            </h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group form-md-line-input form-md-floating-label no-hint margin-bottom-0">
+                <label>变量类型</label>
+                <select class="form-control edited" ng-model="vm.entity.detail.paramterType" required>
+                    <option value="1">Routeoid_航班主键</option>
+                    <option value="2">FlightDateTime_航班日期</option>
+                    <option value="3">ExecutionDateTime_航班执行日期</option>
+                    <option value="4">FlightNo2_航班号</option>
+                    <option value="5">FlightNo3_三字码航班号</option>
+                    <option value="6">AirlineCode2_航司二字码</option>
+                    <option value="7">AirlineCode3_航司三字码</option>
+                    <option value="8">FlightNum_航班号_除航司部分</option>
+                    <option value="9">FlightMssion_航班性质</option>
+                    <option value="10">FlightType_航班类型</option>
+                    <option value="11">DepFIV1NO3_出港经停1三字码</option>
+                    <option value="12">DepFIV1NO4_出港经停1四字码</option>
+                    <option value="13">DepFIV2NO3_出港经停2三字码</option>
+                    <option value="14">DepFIV2NO4_出港经停2四字码</option>
+                    <option value="15">ArrFIV1NO3_进港经停1三字码</option>
+                    <option value="16">ArrFIV1NO4_进港经停1四字码</option>
+                    <option value="17">ArrFIV2NO3_进港经停2三字码</option>
+                    <option value="18">ArrFIV2NO4_进港经停2四字码</option>
+                    <option value="19">Fiv1No3_经停1三字码</option>
+                    <option value="20">Fiv1No4_经停1四字码</option>
+                    <option value="21">Fiv2No3_经停2三字码</option>
+                    <option value="22">Fiv2No4_经停2四字码</option>
+                    <option value="23">ForgNo3_起场三字码</option>
+                    <option value="24">ForgNo4_起场四字码</option>
+                    <option value="25">FestNo3_落场三字码</option>
+                    <option value="26">FestNo4_落场四字码</option>
+                    <option value="27">DepPlanTime_计划起飞时间</option>
+                    <option value="28">DepForecastTime_预计起飞时间</option>
+                    <option value="29">DepartTime_实际起飞时间</option>
+                    <option value="30">ArrPlanTime_计划落地时间</option>
+                    <option value="31">ArrForecastTime_预计落地时间</option>
+                    <option value="32">ArriveTime_实际落地时间</option>
+                    <option value="33">FlightStatus_航班状态</option>
+                    <option value="34">Gate_登机口</option>
+                    <option value="35">Gateopentime_登机口计划开启时间</option>
+                    <option value="36">Gateclosetime_登机口计划关闭时间</option>
+                    <option value="37">Carousel_行李转盘</option>
+                    <option value="38">CheckinLoad_值机岛</option>
+                    <option value="39">CheckinCounter_值机柜台</option>
+                    <option value="40">CheckinTimeStart_值机开始时间</option>
+                    <option value="41">CheckinTimeEnd_值机结束时间</option>
+                    <option value="42">FlightCirculationStatus_航班流转状态</option>
+                    <option value="43">FlightAbnormalReason_异常原因</option>
+                    <option value="44">Freg_机号</option>
+                    <option value="45">DeporArrCode_进出港标记</option>
+                    <option value="46">LocalAirportCode_本场代码</option>
+                    <option value="47">Xlsjtime_行李上架时间</option>
+                    <option value="48">Xlxjtime_行李下架时间</option>
+                    <option value="49">Dlytype_延误类型</option>
+                    <option value="50">Dlytime_延误时间</option>
+                    <option value="51">Counterno_柜台号码</option> 
+                </select>
+            </div>
+
+            @*<div ng-if="!vm.entity.detail.isParamter" class="form-group form-md-line-input form-md-floating-label no-hint margin-bottom-0">
+                    <label>常用语</label>
+                    <input type="text" class="form-control edited" ng-model="vm.entity.detail.constId" />
+                </div>*@
+
+            <div class="form-group form-md-line-input form-md-floating-label no-hint margin-bottom-0">
+                <label>排序</label>
+                <input type="number" class="form-control edited" ng-model="vm.entity.detail.sort" required />
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="vm.refresh()">refresh</button>
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
+            <button type="submit" button-busy="vm.saving" busy-text="保存中" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="createOrEditForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>
+        </div>
+    </form>
+</div>

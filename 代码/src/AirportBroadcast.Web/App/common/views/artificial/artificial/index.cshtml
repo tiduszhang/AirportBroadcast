@@ -1,0 +1,29 @@
+﻿<div ng-controller="common.views.artificial.artificial.index as vm">
+
+    <div class="portlet light margin-bottom-0">
+        <div class="portlet-body">
+            <div class="row margin-bottom-5" style="padding-left:0px;padding-right:0px;">
+                <div class="col-md-3">
+                    <button class="btn" ng-class='{"red":vm.editSchd,"btn-primary":!vm.editSchd}' ng-click="vm.ChangeAutoPlay()">{{ vm.editSchd?"人工播放中...":"自动播放中..."}}</button>
+                </div>
+                @*<div class="col-md-3">
+                    <button class="btn" ng-if="vm.editSchd" ng-click="vm.PlayDliaog()">人工插播</button>
+                </div>*@
+            </div>
+            <div class="row margin-bottom-5" style="padding-left:0px;padding-right:0px;">
+                <div class="col-md-6" style="padding-left:0px;padding-right:2px;">
+                    <div busy-if="vm.loading">
+                        <div style="width: 100%;border: 1px solid #e2e2e2;background: #f2f2f2;padding: 5px;text-align: center;">进港</div>
+                        <div ui-grid="vm.optionsArr" ui-grid-resize-columns></div>
+                    </div>
+                </div>
+                <div class="col-md-6" style="padding-left:0px;padding-right:0px;">
+                    <div busy-if="vm.loading" style="padding-left:2px;padding-right:0px;">
+                        <div style="width: 100%;border: 1px solid #e2e2e2;background: #f2f2f2;padding: 5px;text-align: center;">出港</div>
+                        <div ui-grid="vm.optionsDep" ui-grid-resize-columns></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

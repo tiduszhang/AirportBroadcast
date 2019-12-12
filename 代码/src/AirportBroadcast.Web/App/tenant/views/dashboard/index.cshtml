@@ -1,0 +1,40 @@
+﻿<div ng-controller="tenant.views.dashboard.index as vm">
+    <div class="portlet light margin-bottom-0">
+        <div class="portlet-body">
+            <div style="position:relative;float:left">
+                <img src="~/Common/Images/jc.jpg" />
+                <img ng-src="{{ vm.port.p1 ? '/Common/Images/boradcast2.png' : '/Common/Images/boradcast1.png'}}" style="position:absolute;top:76px;left:360px;z-index:2" />
+                <img ng-src="{{ vm.port.p2 ? '/Common/Images/boradcast2.png' : '/Common/Images/boradcast1.png'}}" style="position:absolute;top:80px;left:510px;z-index:2" />
+                <img ng-src="{{ vm.port.p3 ? '/Common/Images/boradcast2.png' : '/Common/Images/boradcast1.png'}}" style="position:absolute;top:110px;left:583px;z-index:2" />
+                <img ng-src="{{ vm.port.p4 ? '/Common/Images/boradcast2.png' : '/Common/Images/boradcast1.png'}}" style="position:absolute;top:190px;left:270px;z-index:2" />
+                <img ng-src="{{ vm.port.p5 ? '/Common/Images/boradcast2.png' : '/Common/Images/boradcast1.png'}}" style="position:absolute;top:240px;left:650px;z-index:2" />
+                <img ng-src="{{ vm.port.p6 ? '/Common/Images/boradcast2.png' : '/Common/Images/boradcast1.png'}}" style="position:absolute;top:110px;left:90px;z-index:2" />
+                <img ng-src="{{ vm.port.p7 ? '/Common/Images/boradcast2.png' : '/Common/Images/boradcast1.png'}}" style="position:absolute;top:240px;left:730px;z-index:2" />
+                <img ng-src="{{ vm.port.p8 ? '/Common/Images/boradcast2.png' : '/Common/Images/boradcast1.png'}}" style="position:absolute;top:360px;left:300px;z-index:2" />
+            </div>
+            <div class="fade-in-up" style="margin-left:800px; ">
+                <div style="width: 100%;border: 1px solid #e2e2e2;background: #f2f2f2;padding:15px;text-align: center;">播放列表</div>
+                <div busy-if="vm.loading">
+                    <div ui-grid="vm.options" ui-grid-resize-columns></div>
+                </div>
+            </div>
+                   
+            <div class="row margin-bottom-5" style="padding-left:0px;padding-right:0px;">
+                <div class="col-md-6" style="padding-left:0px;padding-right:2px;">
+                    <div busy-if="vm.loading">
+                        <div style="width: 100%;border: 1px solid #e2e2e2;background: #f2f2f2;padding: 5px;text-align: center;">进港</div>
+                        <div ui-grid="vm.optionsArr" ui-grid-resize-columns></div>
+                    </div>
+                </div>
+                <div class="col-md-6" style="padding-left:0px;padding-right:0px;">
+                    <div busy-if="vm.loading" style="padding-left:2px;padding-right:0px;">
+                        <div style="width: 100%;border: 1px solid #e2e2e2;background: #f2f2f2;padding: 5px;text-align: center;">出港</div>
+                        <div ui-grid="vm.optionsDep" ui-grid-resize-columns></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

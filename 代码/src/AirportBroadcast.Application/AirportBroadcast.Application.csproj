@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDF5D964-4C0F-4F19-B674-58A38A5E5401}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AirportBroadcast</RootNamespace>
+    <AssemblyName>AirportBroadcast.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\AirportBroadcast.Web\bin\AirportBroadcast.Application.XML</DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abp, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.4.5.0\lib\netstandard2.0\Abp.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.AutoMapper, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.4.5.0\lib\netstandard2.0\Abp.AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.4.5.0\lib\net461\Abp.Zero.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.Common, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.Common.4.5.0\lib\netstandard2.0\Abp.Zero.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.Ldap, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.Ldap.4.5.0\lib\netstandard2.0\Abp.Zero.Ldap.dll</HintPath>
+    </Reference>
+    <Reference Include="Abp.Zero.Owin, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.Owin.4.5.0\lib\net461\Abp.Zero.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Apache.NMS, Version=1.7.1.3894, Culture=neutral, PublicKeyToken=82756feee3957618, processorArchitecture=MSIL">
+      <HintPath>..\packages\Apache.NMS.1.7.1\lib\net40\Apache.NMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Apache.NMS.ActiveMQ, Version=1.7.2.4108, Culture=neutral, PublicKeyToken=82756feee3957618, processorArchitecture=MSIL">
+      <HintPath>..\packages\Apache.NMS.ActiveMQ.1.7.2\lib\net40\Apache.NMS.ActiveMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Collection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=e57c3f0a3d6646db, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.Collection.5.0.0\lib\net461\AutoMapper.Collection.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.LoggingFacility.4.1.1\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.1\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="ChnCharInfo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=18f031bd02e5e291, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.International.Converters.PinYinConverter.1.0.0\lib\ChnCharInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2018.3.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2018.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.9.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Context, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Context.1.1.0\lib\net46\Nito.AsyncEx.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Coordination, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Coordination.1.0.2\lib\net46\Nito.AsyncEx.Coordination.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.4.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Tasks, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Tasks.1.1.0\lib\net46\Nito.AsyncEx.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Collections.Deque, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Collections.Deque.1.0.0\lib\portable45-net45+win8+wp8+wpa81\Nito.Collections.Deque.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Disposables, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Disposables.1.0.0\lib\portable45-net45+win8+wp8+wpa81\Nito.Disposables.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.0.10.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.0.10\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Formatters.4.3.0\lib\net46\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Claims, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Claims.4.3.0\lib\net46\System.Security.Claims.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.4.3.0\lib\net46\System.Xml.XPath.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XmlDocument.4.3.0\lib\net46\System.Xml.XPath.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.4778.30637, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ThoughtWorks.QRCode.1.1.0\lib\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeZoneConverter, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneConverter.2.5.1\lib\net45\TimeZoneConverter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbpZeroTemplateApplicationModule.cs" />
+    <Compile Include="AbpZeroTemplateAppServiceBase.cs" />
+    <Compile Include="ActiveMQ\ActiveMQListener.cs" />
+    <Compile Include="ActiveMQ\CommAudioTempleAppService.cs" />
+    <Compile Include="ActiveMQ\Dto\AirShowDataDto.cs" />
+    <Compile Include="ActiveMQ\Dto\CommAudioFileNameDto.cs" />
+    <Compile Include="ActiveMQ\Dto\HandPlayDto.cs" />
+    <Compile Include="ActiveMQ\Dto\HandPlayTextDto.cs" />
+    <Compile Include="ActiveMQ\Dto\PlayAudioLogDto.cs" />
+    <Compile Include="ActiveMQ\Dto\ReceiveJsonDto.cs" />
+    <Compile Include="ActiveMQ\IReceiveJsonAppService.cs" />
+    <Compile Include="AppConsts.cs" />
+    <Compile Include="AudioSets\dtos\AudioPlay\AudioPlaySetDto.cs" />
+    <Compile Include="AudioSets\dtos\AudioPlay\AudioPlaySetTempleDto.cs" />
+    <Compile Include="AudioSets\dtos\AudioPlay\ChooseTopPwrPortDto.cs" />
+    <Compile Include="AudioSets\dtos\AudioPlay\UpdateDeviceListInputDto.cs" />
+    <Compile Include="AudioSets\dtos\Device\AudioDeviceDto.cs" />
+    <Compile Include="AudioSets\dtos\AudioPlay\ChooseDeviceDto.cs" />
+    <Compile Include="AudioSets\dtos\TopPwrPort\TopPwrPortDto.cs" />
+    <Compile Include="AudioSets\IAudioPlaySetAppService.cs" />
+    <Compile Include="AudioSets\IAudioTopPwrPortAppService.cs" />
+    <Compile Include="AudioSets\IAudioDeviceAppService.cs" />
+    <Compile Include="Auditing\Dto\DesSercrtOutput.cs" />
+    <Compile Include="Auditing\INamespaceStripper.cs" />
+    <Compile Include="Auditing\NamespaceStripper.cs" />
+    <Compile Include="Auditing\AuditLogAndUser.cs" />
+    <Compile Include="Auditing\Dto\AuditLogListDto.cs" />
+    <Compile Include="Auditing\Dto\GetAuditLogsInput.cs" />
+    <Compile Include="Auditing\AuditLogAppService.cs" />
+    <Compile Include="Auditing\Exporting\AuditLogListExcelExporter.cs" />
+    <Compile Include="Auditing\Exporting\IAuditLogListExcelExporter.cs" />
+    <Compile Include="Auditing\IAuditLogAppService.cs" />
+    <Compile Include="Authorization\AbpLoginResultTypeHelper.cs" />
+    <Compile Include="Authorization\LogInManager.cs" />
+    <Compile Include="Authorization\Permissions\Dto\FlatPermissionDto.cs" />
+    <Compile Include="Authorization\Permissions\Dto\FlatPermissionWithLevelDto.cs" />
+    <Compile Include="Authorization\Permissions\IPermissionAppService.cs" />
+    <Compile Include="Authorization\Permissions\PermissionAppService.cs" />
+    <Compile Include="Authorization\Roles\Dto\GetRoleForEditOutput.cs" />
+    <Compile Include="Authorization\Roles\Dto\GetRolesInput.cs" />
+    <Compile Include="Authorization\Roles\IRoleAppService.cs" />
+    <Compile Include="Authorization\Permissions\PermissionManagerExtensions.cs" />
+    <Compile Include="Authorization\Roles\RoleAppService.cs" />
+    <Compile Include="Authorization\Roles\Dto\RoleListDto.cs" />
+    <Compile Include="Authorization\Roles\Dto\RoleEditDto.cs" />
+    <Compile Include="Authorization\Roles\Dto\CreateOrUpdateRoleInput.cs" />
+    <Compile Include="Authorization\Users\Dto\LinkToUserInput.cs" />
+    <Compile Include="Authorization\Users\Dto\GetLinkedUsersInput.cs" />
+    <Compile Include="Authorization\Users\Dto\SetUserCarryStationInputDto.cs" />
+    <Compile Include="Authorization\Users\Dto\UnlinkUserInput.cs" />
+    <Compile Include="Authorization\Users\Dto\UserCarrystationSelectDto.cs" />
+    <Compile Include="Authorization\Users\Dto\UserLoginAttemptDto.cs" />
+    <Compile Include="Authorization\Users\IUserLinkAppService.cs" />
+    <Compile Include="Authorization\Users\IUserLoginAppService.cs" />
+    <Compile Include="Authorization\Users\LinkedUserDto.cs" />
+    <Compile Include="Authorization\Users\Profile\Dto\GetPasswordComplexitySettingOutput.cs" />
+    <Compile Include="Authorization\Users\Profile\Dto\UpdateProfilePictureInput.cs" />
+    <Compile Include="Authorization\Users\UserLinkAppService.cs" />
+    <Compile Include="Authorization\Users\UserLoginAppService.cs" />
+    <Compile Include="Baseinfo\dtos\AudioAirLine\AudioAirLineDto.cs" />
+    <Compile Include="Baseinfo\dtos\AudioCheckIn\AudioCheckInDto.cs" />
+    <Compile Include="Baseinfo\dtos\AudioCity\AudioCityDto.cs" />
+    <Compile Include="Baseinfo\dtos\AudioConst\AudioConstDto.cs" />
+    <Compile Include="Baseinfo\dtos\AudioDigit\AudioDigitDto.cs" />
+    <Compile Include="Baseinfo\dtos\AudioGate\AudioGateDto.cs" />
+    <Compile Include="Baseinfo\dtos\AudioHour\AudioHourDto.cs" />
+    <Compile Include="Baseinfo\dtos\AudioLanguage\AudioLanguageDto.cs" />
+    <Compile Include="Baseinfo\dtos\AudioMinite\AudioMiniteDto.cs" />
+    <Compile Include="Baseinfo\dtos\AudioReason\AudioReasonDto.cs" />
+    <Compile Include="Baseinfo\dtos\AudioTemplte\AudioTemplteDetailInput.cs" />
+    <Compile Include="Baseinfo\dtos\AudioTemplte\AudioTemplteDto.cs" />
+    <Compile Include="Baseinfo\dtos\AudioTemplte\AudioTemplteDetailDto.cs" />
+    <Compile Include="Baseinfo\dtos\AudioTurnPlate\AudioTurnPlateDto.cs" />
+    <Compile Include="Baseinfo\dtos\BaseAudioEntityDto.cs" />
+    <Compile Include="Baseinfo\dtos\GetAllAudioInputDto.cs" />
+    <Compile Include="Baseinfo\IAudioAirLineAppService.cs" />
+    <Compile Include="Baseinfo\IAudioCheckInAppService.cs" />
+    <Compile Include="Baseinfo\IAudioCityAppService.cs" />
+    <Compile Include="Baseinfo\IAudioConstAppService.cs" />
+    <Compile Include="Baseinfo\IAudioDigitAppService.cs" />
+    <Compile Include="Baseinfo\IAudioGateAppService.cs" />
+    <Compile Include="Baseinfo\IAudioHourAppService.cs" />
+    <Compile Include="Baseinfo\IAudioLanguageAppService.cs" />
+    <Compile Include="Baseinfo\IAudioMiniteAppService.cs" />
+    <Compile Include="Baseinfo\IAudioReasonAppService.cs" />
+    <Compile Include="Baseinfo\IAudioTemplteAppService.cs" />
+    <Compile Include="Baseinfo\IAudioTurnPlateAppService.cs" />
+    <Compile Include="Caching\CachingAppService.cs" />
+    <Compile Include="Caching\Dto\CacheDto.cs" />
+    <Compile Include="Caching\ICachingAppService.cs" />
+    <Compile Include="Chat\ChatAppService.cs" />
+    <Compile Include="Chat\Dto\ChatMessageDto.cs" />
+    <Compile Include="Chat\Dto\ChatUserDto.cs" />
+    <Compile Include="Chat\Dto\ChatUserWithMessagesDto.cs" />
+    <Compile Include="Chat\Dto\GetUserChatMessagesInput.cs" />
+    <Compile Include="Chat\Dto\GetUserChatFriendsWithSettingsOutput.cs" />
+    <Compile Include="Chat\Dto\MarkAllUnreadMessagesOfUserAsReadInput.cs" />
+    <Compile Include="Chat\IChatAppService.cs" />
+    <Compile Include="Common\CommonLookupAppService.cs" />
+    <Compile Include="Common\Dto\FilePathAndNameInputDto.cs" />
+    <Compile Include="Common\Dto\LanguageForChoose.cs" />
+    <Compile Include="Common\Dto\FindUsersInput.cs" />
+    <Compile Include="Common\ICommonLookupAppService.cs" />
+    <Compile Include="Configuration\Host\Dto\SecuritySettingsEditDto.cs" />
+    <Compile Include="Configuration\Host\Dto\SendTestEmailInput.cs" />
+    <Compile Include="Configuration\Host\Dto\TenantManagementSettingsEditDto.cs" />
+    <Compile Include="Configuration\Host\Dto\TwoFactorLoginSettingsEditDto.cs" />
+    <Compile Include="Configuration\Host\Dto\UserLockOutSettingsEditDto.cs" />
+    <Compile Include="Configuration\Tenants\Dto\BaoXianSettingsEditDto.cs" />
+    <Compile Include="Configuration\Tenants\Dto\LdapSettingsEditDto.cs" />
+    <Compile Include="Configuration\Tenants\Dto\PayMentSettingEditDto.cs" />
+    <Compile Include="Configuration\Tenants\Dto\PushDataSettingsEditDto.cs" />
+    <Compile Include="DataExporting\Excel\EpPlus\EpPlusExcelExporterBase.cs" />
+    <Compile Include="DataExporting\Exporting\ColumnHeaderDto.cs" />
+    <Compile Include="DataExporting\Exporting\IListExcelExporter.cs" />
+    <Compile Include="DataExporting\Exporting\ListExcelExporter.cs" />
+    <Compile Include="Dto\GetAllInputDto.cs" />
+    <Compile Include="Dto\PagedAndFilteredInputDto.cs" />
+    <Compile Include="Dto\PagedInputDto.cs" />
+    <Compile Include="Dto\PagedResultOutputWithFooter.cs" />
+    <Compile Include="Dto\PagedSortedAndFilteredInputDto.cs" />
+    <Compile Include="Editions\Dto\CreateOrUpdateEditionDto.cs" />
+    <Compile Include="Editions\Dto\EditionEditDto.cs" />
+    <Compile Include="Editions\Dto\FlatFeatureDto.cs" />
+    <Compile Include="Editions\EditionAppService.cs" />
+    <Compile Include="Editions\Dto\EditionListDto.cs" />
+    <Compile Include="Editions\Dto\GetEditionForEditOutput.cs" />
+    <Compile Include="Editions\IEditionAppService.cs" />
+    <Compile Include="Authorization\Users\Exporting\IUserListExcelExporter.cs" />
+    <Compile Include="Authorization\Users\Exporting\UserListExcelExporter.cs" />
+    <Compile Include="Dto\FileDto.cs" />
+    <Compile Include="Authorization\Users\Profile\Dto\ChangePasswordInput.cs" />
+    <Compile Include="Authorization\Users\Dto\CreateOrUpdateUserInput.cs" />
+    <Compile Include="Authorization\Users\Dto\GetUsersInput.cs" />
+    <Compile Include="Authorization\Users\Dto\GetUserForEditOutput.cs" />
+    <Compile Include="Authorization\Users\Profile\Dto\CurrentUserProfileEditDto.cs" />
+    <Compile Include="Authorization\Users\Dto\GetUserPermissionsForEditOutput.cs" />
+    <Compile Include="Configuration\Host\Dto\EmailSettingsEditDto.cs" />
+    <Compile Include="Configuration\Host\Dto\GeneralSettingsEditDto.cs" />
+    <Compile Include="Configuration\Host\Dto\HostSettingsEditDto.cs" />
+    <Compile Include="Configuration\Host\Dto\HostUserManagementSettingsEditDto.cs" />
+    <Compile Include="Configuration\Host\HostSettingsAppService.cs" />
+    <Compile Include="Configuration\Host\IHostSettingsAppService.cs" />
+    <Compile Include="Configuration\Tenants\ITenantSettingsAppService.cs" />
+    <Compile Include="Configuration\Tenants\Dto\TenantSettingsEditDto.cs" />
+    <Compile Include="Configuration\Tenants\Dto\TenantUserManagementSettingsEditDto.cs" />
+    <Compile Include="Configuration\Tenants\TenantSettingsAppService.cs" />
+    <Compile Include="Dto\PagedAndSortedInputDto.cs" />
+    <Compile Include="Authorization\Users\Profile\IProfileAppService.cs" />
+    <Compile Include="Authorization\Users\IUserAppService.cs" />
+    <Compile Include="Authorization\Users\Profile\ProfileAppService.cs" />
+    <Compile Include="Authorization\Users\Dto\UpdateUserPermissionsInput.cs" />
+    <Compile Include="Authorization\Users\UserAppService.cs" />
+    <Compile Include="Authorization\Users\Dto\UserListDto.cs" />
+    <Compile Include="Authorization\Users\Dto\UserEditDto.cs" />
+    <Compile Include="Authorization\Users\Dto\UserRoleDto.cs" />
+    <Compile Include="CustomDtoMapper.cs" />
+    <Compile Include="Friendships\Dto\AcceptFriendshipRequestInput.cs" />
+    <Compile Include="Friendships\Dto\BlockUserInput.cs" />
+    <Compile Include="Friendships\Dto\CreateFriendshipRequestByUserNameInput.cs" />
+    <Compile Include="Friendships\Dto\CreateFriendshipRequestInput.cs" />
+    <Compile Include="Friendships\Dto\FriendshipDto.cs" />
+    <Compile Include="Friendships\Dto\UnblockUserInput.cs" />
+    <Compile Include="Friendships\FriendshipAppService.cs" />
+    <Compile Include="Friendships\IFriendshipAppService.cs" />
+    <Compile Include="IO\AppFileHelper.cs" />
+    <Compile Include="Localization\Dto\CreateOrUpdateLanguageInput.cs" />
+    <Compile Include="Localization\Dto\ApplicationLanguageEditDto.cs" />
+    <Compile Include="Localization\Dto\ApplicationLanguageListDto.cs" />
+    <Compile Include="Localization\Dto\GetLanguagesOutput.cs" />
+    <Compile Include="Localization\Dto\GetLanguageForEditOutput.cs" />
+    <Compile Include="Localization\Dto\LanguageTextListDto.cs" />
+    <Compile Include="Localization\FamFamFamFlagsHelper.cs" />
+    <Compile Include="Localization\GetLanguageTextsInput.cs" />
+    <Compile Include="Localization\ILanguageAppService.cs" />
+    <Compile Include="Localization\LanguageAppService.cs" />
+    <Compile Include="Localization\Dto\SetDefaultLanguageInput.cs" />
+    <Compile Include="Localization\Dto\UpdateLanguageTextInput.cs" />
+    <Compile Include="Logging\Dto\GetLatestWebLogsOutput.cs" />
+    <Compile Include="Logging\IWebLogAppService.cs" />
+    <Compile Include="Logging\WebLogAppService.cs" />
+    <Compile Include="MultiTenancy\Dto\CreateTenantInput.cs" />
+    <Compile Include="MultiTenancy\Dto\GetTenantsInput.cs" />
+    <Compile Include="MultiTenancy\Dto\GetTenantFeaturesForEditOutput.cs" />
+    <Compile Include="MultiTenancy\ITenantAppService.cs" />
+    <Compile Include="MultiTenancy\Dto\TenantListDto.cs" />
+    <Compile Include="MultiTenancy\TenantAppService.cs" />
+    <Compile Include="MultiTenancy\Dto\TenantEditDto.cs" />
+    <Compile Include="MultiTenancy\Dto\UpdateTenantFeaturesInput.cs" />
+    <Compile Include="Net\MimeTypes\MimeTypeNames.cs" />
+    <Compile Include="Notifications\Dto\GetUserNotificationsInput.cs" />
+    <Compile Include="Notifications\Dto\GetNotificationsOutput.cs" />
+    <Compile Include="Notifications\Dto\GetNotificationSettingsOutput.cs" />
+    <Compile Include="Notifications\Dto\NotificationSubscriptionWithDisplayNameDto.cs" />
+    <Compile Include="Notifications\INotificationAppService.cs" />
+    <Compile Include="Notifications\NotificationAppService.cs" />
+    <Compile Include="Notifications\Dto\NotificationSubscriptionDto.cs" />
+    <Compile Include="Notifications\Dto\UpdateNotificationSettingsInput.cs" />
+    <Compile Include="Organizations\Dto\UserToOrganizationUnitInput.cs" />
+    <Compile Include="Organizations\Dto\CreateOrganizationUnitInput.cs" />
+    <Compile Include="Organizations\Dto\GetOrganizationUnitUsersInput.cs" />
+    <Compile Include="Organizations\Dto\UpdateOrganizationUnitInput.cs" />
+    <Compile Include="Organizations\IOrganizationUnitAppService.cs" />
+    <Compile Include="Organizations\Dto\OrganizationUnitDto.cs" />
+    <Compile Include="Organizations\Dto\MoveOrganizationUnitInput.cs" />
+    <Compile Include="Organizations\OrganizationUnitAppService.cs" />
+    <Compile Include="Organizations\Dto\OrganizationUnitUserListDto.cs" />
+    <Compile Include="PlayAudio\AudioControlModal.cs" />
+    <Compile Include="PlayAudio\Dto\PlayerAgs.cs" />
+    <Compile Include="PlayAudio\Dto\PlayStateDto.cs" />
+    <Compile Include="PlayAudio\Dto\WavFileDto.cs" />
+    <Compile Include="PlayAudio\PlayerCommon\IWavePlayer.cs" />
+    <Compile Include="PlayAudio\PlayerCommon\MmTime.cs" />
+    <Compile Include="PlayAudio\PlayerCommon\WaveHeader.cs" />
+    <Compile Include="PlayAudio\PlayerCommon\WaveInterop.cs" />
+    <Compile Include="PlayAudio\PlayerCommon\WaveOutBuffer.cs" />
+    <Compile Include="PlayAudio\PlayerCommon\WaveOutEvent.cs" />
+    <Compile Include="PlayAudio\PlayerCommon\WaveOutUtils.cs" />
+    <Compile Include="PlayAudio\Player\Audio.cs" />
+    <Compile Include="PlayAudio\Player\IAudio.cs" />
+    <Compile Include="PlayAudio\Player\Players.cs" />
+    <Compile Include="PlayAudio\Player\PortData.cs" />
+    <Compile Include="PlayAudio\Player\Win32.cs" />
+    <Compile Include="PlayAudio\WavCombine.cs" />
+    <Compile Include="PlayAudio\WavCombineAppService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sessions\Dto\GetCurrentLoginInformationsOutput.cs" />
+    <Compile Include="Sessions\Dto\TenantLoginInfoDto.cs" />
+    <Compile Include="Sessions\Dto\UserLoginInfoDto.cs" />
+    <Compile Include="Sessions\ISessionAppService.cs" />
+    <Compile Include="Sessions\SessionAppService.cs" />
+    <Compile Include="Tasks\AutoPlayGetLuaTask.cs" />
+    <Compile Include="Tasks\RemoveLogsTask.cs" />
+    <Compile Include="Tenants\Dashboard\Dto\GetMemberActivityOutput.cs" />
+    <Compile Include="Tenants\Dashboard\ITenantDashboardAppService.cs" />
+    <Compile Include="Tenants\Dashboard\TenantDashboardAppService.cs" />
+    <Compile Include="Timing\Dto\GetTimezoneComboboxItemsInput.cs" />
+    <Compile Include="Timing\Dto\GetTimezonesInput.cs" />
+    <Compile Include="Timing\ITimingAppService.cs" />
+    <Compile Include="Timing\TimingAppService.cs" />
+    <Compile Include="Utility\DESHelper.cs" />
+    <Compile Include="Utility\JTTS_ML.cs" />
+    <Compile Include="Utility\PinYinHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AirportBroadcast.Core\AirportBroadcast.Core.csproj">
+      <Project>{17298EA0-AF73-4F30-B6F1-2066100D7D74}</Project>
+      <Name>AirportBroadcast.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Events\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Utility\jTTS_ML.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
