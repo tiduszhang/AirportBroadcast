@@ -1,1 +1,1 @@
-regsvr32.exe "D:\MyJob\洛普（南京）\广播系统\淮安机场\接口文档\消息中间件示例\FMS\MSFLXGRD.OCX" 
+regsvr32.exe "D:\MyJob\GIT\AirportBroadcast\原始文件\淮安机场\接口文档\消息中间件示例\FMS\MSFLXGRD.OCX" 

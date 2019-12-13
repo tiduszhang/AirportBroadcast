@@ -808,3 +808,311 @@ N'
 20191212135601transmit fail:   'FOS' --> 'FTS'
 20191212135605transmit fail:   'FOS' --> 'FTS'
 20191212135612transmit fail:   'FOS' --> 'DAS'
+20191213102559*************************************************
+20191213102559TASManager	starting ...
+20191213102559*************************************************
+20191213102559initalizing...
+20191213102559FMS listen on 8080...
+20191213102559FOS listen on 8081...
+20191213102559RMS listen on 8082...
+20191213102559BDMS listen on 8083...
+20191213102559AFTN_T listen on 8084...
+20191213102559FIDS listen on 8085...
+20191213102559TA_ADM listen on 20002...
+20191213102559OK,All Service is started
+20191213103213accept client '127.0.0.1' on 8080
+20191213103213FMS sender on 8080 started
+20191213103213FMS receiver on 8080 started
+20191213103213FMS on 8080 receive 'FIN'
+20191213103213FMS is closing socket on 8080
+20191213103213FMS listen on 8080...
+20191213103213accept client '127.0.0.1' on 8080!
+20191213103221FMS on 8080 receive 'FIN'
+20191213103221FMS is closing socket on 8080
+20191213103221FMS listen on 8080...
+20191213110720accept client '127.0.0.1' on 8081
+20191213110720FOS receiver on 8081 started
+20191213110724FOS on 8081 receive 'FIN'
+20191213110724FOS is closing socket on 8081
+20191213110724FOS listen on 8081...
+20191213110839accept client '127.0.0.1' on 8081!
+20191213110839FOS on 8081 receive 'FIN'
+20191213110839FOS is closing socket on 8081
+20191213110839FOS listen on 8081...
+20191213110839accept client '127.0.0.1' on 8081!
+20191213110846------------------------------------------------
+20191213110846TASManager	was ShutDown 
+20191213110846-------------------------------------------------
+
+
+20191213111015*************************************************
+20191213111015TASManager	starting ...
+20191213111015*************************************************
+20191213111015initalizing...
+20191213111015FMS listen on 8080...
+20191213111015FOS listen on 8081...
+20191213111015RMS listen on 8082...
+20191213111015BDMS listen on 8083...
+20191213111015AFTN_T listen on 8084...
+20191213111015FIDS listen on 8085...
+20191213111015TA_ADM listen on 20002...
+20191213111016OK,All Service is started
+20191213111020client 'AirportBro' is invalid, IP is 127.0.0.1, login refused
+20191213111029client 'AirportBro' is invalid, IP is 127.0.0.1, login refused
+20191213111057client 'Equipment' is invalid, IP is 127.0.0.1, login refused
+20191213111158accept client '127.0.0.1' on 8080
+20191213111158FMS receiver on 8080 started
+20191213111158FMS on 8080 receive 'FIN'
+20191213111158FMS is closing socket on 8080
+20191213111159FMS listen on 8080...
+20191213111159accept client '127.0.0.1' on 8080!
+20191213111401FMS on 8080 receive 'FIN'
+20191213111401FMS is closing socket on 8080
+20191213111401FMS listen on 8080...
+20191213111619accept client '127.0.0.1' on 8080!
+20191213111619FMS on 8080 receive 'FIN'
+20191213111619FMS is closing socket on 8080
+20191213111619FMS listen on 8080...
+20191213111619accept client '127.0.0.1' on 8080!
+20191213111621FMS on 8080 receive 'FIN'
+20191213111621FMS is closing socket on 8080
+20191213111621FMS listen on 8080...
+20191213112210accept client '127.0.0.1' on 8080!
+20191213112210FMS on 8080 receive 'FIN'
+20191213112210FMS is closing socket on 8080
+20191213112210FMS listen on 8080...
+20191213112210accept client '127.0.0.1' on 8080!
+20191213112229accept client '127.0.0.1' on 8081
+20191213112229FOS sender on 8081 started
+20191213112229FOS receiver on 8081 started
+20191213112229FOS on 8081 receive 'FIN'
+20191213112229FOS is closing socket on 8081
+20191213112229FOS listen on 8081...
+20191213112229accept client '127.0.0.1' on 8081!
+20191213112234FMS on 8080 receive 'FIN'
+20191213112234FMS is closing socket on 8080
+20191213112234FMS listen on 8080...
+20191213112339accept client '127.0.0.1' on 8080!
+20191213112339FMS on 8080 receive 'FIN'
+20191213112339FMS is closing socket on 8080
+20191213112339FMS listen on 8080...
+20191213112340accept client '127.0.0.1' on 8080!
+20191213112350FMS on 8080 receive 'FIN'
+20191213112350FMS is closing socket on 8080
+20191213112350FMS listen on 8080...
+20191213112352FOS on 8081 receive 'FIN'
+20191213112352FOS is closing socket on 8081
+20191213112352FOS listen on 8081...
+20191213112644accept client '127.0.0.1' on 8080!
+20191213112644FMS on 8080 receive 'FIN'
+20191213112644FMS is closing socket on 8080
+20191213112644FMS listen on 8080...
+20191213112644accept client '127.0.0.1' on 8080!
+20191213112658accept client '127.0.0.1' on 8081!
+20191213112722FMS on 8080 receive 'FIN'
+20191213112722FMS is closing socket on 8080
+20191213112722FMS listen on 8080...
+20191213112808accept client '127.0.0.1' on 8080!
+20191213112808FMS on 8080 receive 'FIN'
+20191213112808FMS is closing socket on 8080
+20191213112808FMS listen on 8080...
+20191213112808accept client '127.0.0.1' on 8080!
+20191213112819FMS on 8080 receive 'FIN'
+20191213112819FMS is closing socket on 8080
+20191213112819FMS listen on 8080...
+20191213113123accept client '127.0.0.1' on 8080!
+20191213113123FMS on 8080 receive 'FIN'
+20191213113123FMS is closing socket on 8080
+20191213113123FMS listen on 8080...
+20191213113123accept client '127.0.0.1' on 8080!
+20191213113131FMS on 8080 receive 'FIN'
+20191213113131FMS is closing socket on 8080
+20191213113131FMS listen on 8080...
+20191213113133FOS on 8081 receive 'FIN'
+20191213113133FOS is closing socket on 8081
+20191213113133FOS listen on 8081...
+20191213113450accept client '127.0.0.1' on 8080!
+20191213113450FMS on 8080 receive 'FIN'
+20191213113450FMS is closing socket on 8080
+20191213113450FMS listen on 8080...
+20191213113450accept client '127.0.0.1' on 8080!
+20191213113503accept client '127.0.0.1' on 8081!
+20191213113503FOS on 8081 receive 'FIN'
+20191213113503FOS is closing socket on 8081
+20191213113503FOS listen on 8081...
+20191213113503accept client '127.0.0.1' on 8081!
+20191213113513transmit fail:   'FOS' --> 'MTS'
+20191213113536FMS on 8080 receive 'FIN'
+20191213113536FMS is closing socket on 8080
+20191213113536FMS listen on 8080...
+20191213113652accept client '127.0.0.1' on 8080!
+20191213113652FMS on 8080 receive 'FIN'
+20191213113652FMS is closing socket on 8080
+20191213113652FMS listen on 8080...
+20191213113652accept client '127.0.0.1' on 8080!
+20191213113700FMS on 8080 receive 'FIN'
+20191213113700FMS is closing socket on 8080
+20191213113700FMS listen on 8080...
+20191213113718accept client '127.0.0.1' on 8080!
+20191213113718FMS on 8080 receive 'FIN'
+20191213113718FMS is closing socket on 8080
+20191213113718FMS listen on 8080...
+20191213113718accept client '127.0.0.1' on 8080!
+20191213113739FMS on 8080 receive 'FIN'
+20191213113739FMS is closing socket on 8080
+20191213113739FMS listen on 8080...
+20191213113747------------------------------------------------
+20191213113747TASManager	was ShutDown 
+20191213113747-------------------------------------------------
+
+
+20191213113759*************************************************
+20191213113759TASManager	starting ...
+20191213113759*************************************************
+20191213113759initalizing...
+20191213113759FMS listen on 8080...
+20191213113759FOS listen on 8081...
+20191213113759RMS listen on 8082...
+20191213113759BDMS listen on 8083...
+20191213113759AFTN_T listen on 8084...
+20191213113759FIDS listen on 8085...
+20191213113759TA_ADM listen on 20002...
+20191213113759OK,All Service is started
+20191213113805accept client '127.0.0.1' on 8080
+20191213113805FMS receiver on 8080 started
+20191213113805FMS on 8080 receive 'FIN'
+20191213113805FMS is closing socket on 8080
+20191213113805FMS listen on 8080...
+20191213113805accept client '127.0.0.1' on 8080!
+20191213113949FMS on 8080 receive 'FIN'
+20191213113949FMS is closing socket on 8080
+20191213113949FMS listen on 8080...
+20191213114159accept client '127.0.0.1' on 8080!
+20191213114159FMS on 8080 receive 'FIN'
+20191213114159FMS is closing socket on 8080
+20191213114159FMS listen on 8080...
+20191213114159accept client '127.0.0.1' on 8080!
+20191213114219accept client '127.0.0.1' on 8081
+20191213114219FOS sender on 8081 started
+20191213114219FOS receiver on 8081 started
+20191213114219FOS on 8081 receive 'FIN'
+20191213114219FOS is closing socket on 8081
+20191213114219FOS listen on 8081...
+20191213114219accept client '127.0.0.1' on 8081!
+20191213114223FMS on 8080 receive 'FIN'
+20191213114223FMS is closing socket on 8080
+20191213114223FMS listen on 8080...
+20191213114331accept client '127.0.0.1' on 8080!
+20191213114331FMS on 8080 receive 'FIN'
+20191213114331FMS is closing socket on 8080
+20191213114331FMS listen on 8080...
+20191213114331accept client '127.0.0.1' on 8080!
+20191213114334FMS on 8080 receive 'FIN'
+20191213114334FMS is closing socket on 8080
+20191213114334FMS listen on 8080...
+20191213114456accept client '127.0.0.1' on 8080!
+20191213114456FMS on 8080 receive 'FIN'
+20191213114456FMS is closing socket on 8080
+20191213114456FMS listen on 8080...
+20191213114456accept client '127.0.0.1' on 8080!
+20191213114456transmit fail:   'FMS' --> 'sssss'
+20191213114508FMS on 8080 receive 'FIN'
+20191213114508FMS is closing socket on 8080
+20191213114508FMS listen on 8080...
+20191213114625accept client '127.0.0.1' on 8080!
+20191213114625FMS on 8080 receive 'FIN'
+20191213114625FMS is closing socket on 8080
+20191213114625FMS listen on 8080...
+20191213114625accept client '127.0.0.1' on 8080!
+20191213115218FMS on 8080 receive 'FIN'
+20191213115218FMS is closing socket on 8080
+20191213115219FMS listen on 8080...
+20191213115238accept client '127.0.0.1' on 8080!
+20191213115238FMS on 8080 receive 'FIN'
+20191213115238FMS is closing socket on 8080
+20191213115238FMS listen on 8080...
+20191213115238accept client '127.0.0.1' on 8080!
+20191213115244FMS on 8080 receive 'FIN'
+20191213115244FMS is closing socket on 8080
+20191213115244FMS listen on 8080...
+20191213115337accept client '127.0.0.1' on 8080!
+20191213115337FMS on 8080 receive 'FIN'
+20191213115337FMS send 'CHK' on 8080 is down
+20191213115337FMS is closing socket on 8080
+20191213115337FMS listen on 8080...
+20191213115337accept client '127.0.0.1' on 8080!
+20191213115354FMS on 8080 receive 'FIN'
+20191213115354FMS is closing socket on 8080
+20191213115354FMS listen on 8080...
+20191213115419accept client '127.0.0.1' on 8080!
+20191213115419FMS on 8080 receive 'FIN'
+20191213115419FMS is closing socket on 8080
+20191213115419FMS listen on 8080...
+20191213115419accept client '127.0.0.1' on 8080!
+20191213115438FMS on 8080 receive 'FIN'
+20191213115438FMS is closing socket on 8080
+20191213115438FMS listen on 8080...
+20191213115701accept client '127.0.0.1' on 8080!
+20191213115701FMS on 8080 receive 'FIN'
+20191213115701FMS is closing socket on 8080
+20191213115701FMS listen on 8080...
+20191213115702accept client '127.0.0.1' on 8080!
+20191213115708FMS on 8080 receive 'FIN'
+20191213115708FMS is closing socket on 8080
+20191213115708FMS listen on 8080...
+20191213123646accept client '127.0.0.1' on 8080!
+20191213123646FMS on 8080 receive 'FIN'
+20191213123646FMS is closing socket on 8080
+20191213123646FMS listen on 8080...
+20191213123646accept client '127.0.0.1' on 8080!
+20191213123654FMS on 8080 receive 'FIN'
+20191213123654FMS is closing socket on 8080
+20191213123654FMS listen on 8080...
+20191213123745accept client '127.0.0.1' on 8080!
+20191213123745FMS on 8080 receive 'FIN'
+20191213123745FMS is closing socket on 8080
+20191213123745FMS listen on 8080...
+20191213123745accept client '127.0.0.1' on 8080!
+20191213123752FMS on 8080 receive 'FIN'
+20191213123752FMS is closing socket on 8080
+20191213123752FMS listen on 8080...
+20191213124029accept client '127.0.0.1' on 8080!
+20191213124030FMS on 8080 receive 'FIN'
+20191213124030FMS is closing socket on 8080
+20191213124030FMS listen on 8080...
+20191213124030accept client '127.0.0.1' on 8080!
+20191213124150FMS on 8080 receive 'FIN'
+20191213124151FMS is closing socket on 8080
+20191213124151FMS listen on 8080...
+20191213124314accept client '127.0.0.1' on 8080!
+20191213124314FMS on 8080 receive 'FIN'
+20191213124314FMS is closing socket on 8080
+20191213124314FMS listen on 8080...
+20191213124314accept client '127.0.0.1' on 8080!
+20191213124324FMS on 8080 receive 'FIN'
+20191213124324FMS is closing socket on 8080
+20191213124324FMS listen on 8080...
+20191213124618accept client '127.0.0.1' on 8080!
+20191213124618FMS on 8080 receive 'FIN'
+20191213124618FMS is closing socket on 8080
+20191213124618FMS listen on 8080...
+20191213124618accept client '127.0.0.1' on 8080!
+20191213124631FMS on 8080 receive 'FIN'
+20191213124631FMS is closing socket on 8080
+20191213124631FMS listen on 8080...
+20191213124635accept client '127.0.0.1' on 8080!
+20191213124635FMS on 8080 receive 'FIN'
+20191213124635FMS is closing socket on 8080
+20191213124635FMS listen on 8080...
+20191213124635accept client '127.0.0.1' on 8080!
+20191213124703FMS on 8080 receive 'FIN'
+20191213124703FMS is closing socket on 8080
+20191213124703FMS listen on 8080...
+20191213124706FOS on 8081 receive 'FIN'
+20191213124706FOS is closing socket on 8081
+20191213124706FOS listen on 8081...
+20191213124709------------------------------------------------
+20191213124709TASManager	was ShutDown 
+20191213124709-------------------------------------------------
+
+
