@@ -222,9 +222,8 @@ namespace AirportBroadcast.ActiveMQ
         }
 
 
-        
         public void DoMsg(string json)
-        {
+        { 
             //获取到ActiveMQ数据了
             //todo: MQ内获取到的航班信息内容解析
             if (!string.IsNullOrEmpty(json))
