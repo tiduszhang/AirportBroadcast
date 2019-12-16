@@ -9,7 +9,19 @@ namespace AirportBroadcast.Equipment
     /// <summary>
     /// 新增航班服务
     /// </summary>
-    public class ISRCommand : ICommand
+    public class ISRCommand
     {
+        /// <summary>
+        /// 指令字符串
+        /// </summary>
+        public virtual string CommandString { get; set; }
+
+        /// <summary>
+        /// 解析指令内容
+        /// </summary>
+        public virtual void Analysis()
+        {
+
+        }
     }
 }
