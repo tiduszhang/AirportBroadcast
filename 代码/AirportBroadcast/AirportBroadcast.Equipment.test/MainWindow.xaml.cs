@@ -38,52 +38,17 @@ namespace AirportBroadcast.Equipment.test
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            TAClientHelp.StartRecivce();
-
-            Task.Factory.StartNew(() =>
-            {
-                isRun = true;
-                do
-                {
-                    System.Threading.Thread.Sleep(1);
-                    var messages = TAClientHelp.GetMessages();
-
-                    if (messages != null && messages.Length > 0)
-                    {
-                        messages.ToList().ForEach(message =>
-                        {
-                            this.Dispatcher.Invoke(() =>
-                            {
-                                //Items.Add(message);
-                                Items.Insert(0, message);
-                                //if (Items.Count > 100)
-                                //{
-                                //    //Items.RemoveAt(0);
-                                //    Items.RemoveAt(Items.Count - 1);
-                                //}
-                            }, System.Windows.Threading.DispatcherPriority.Loaded);
-                        });
-
-                    }
-                    else if (Items.Count > 100)
-                    {
-                        this.Dispatcher.Invoke(() =>
-                        {
-                            while (Items.Count > 100)
-                            { 
-                                Items.RemoveAt(Items.Count - 1);
-                            }
-                        }, System.Windows.Threading.DispatcherPriority.Loaded);
-                    }
-                } while (isRun);
-            });
+            CommandReader.StartRead();
         }
 
-
+        /// <summary>
+        /// 关闭窗口
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnClosed(EventArgs e)
         {
             isRun = false;
-            TAClientHelp.StopRecivce();
+            CommandReader.StopRead();
             base.OnClosed(e);
         }
     }

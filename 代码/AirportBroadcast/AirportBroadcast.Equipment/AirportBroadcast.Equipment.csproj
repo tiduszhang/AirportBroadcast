@@ -79,10 +79,10 @@
     <Compile Include="Command\URGCommand.cs" />
     <Compile Include="Command\USRCommand.cs" />
     <Compile Include="Data\FlightInfo.cs" />
-    <Compile Include="Data\FilghtServer.cs" />
-    <Compile Include="Data\FilghtCompany.cs" />
+    <Compile Include="Data\FlightServer.cs" />
+    <Compile Include="Data\FlightCompany.cs" />
     <Compile Include="Data\DelayLoss.cs" />
-    <Compile Include="Data\FilghtNature.cs" />
+    <Compile Include="Data\FlightNature.cs" />
     <Compile Include="Data\FlightRemark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TAClientConnector.cs" />
