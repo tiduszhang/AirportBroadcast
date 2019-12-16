@@ -17,11 +17,11 @@ namespace AirportBroadcast.Equipment
         public virtual string CommandString { get; set; }
 
         /// <summary>
-        /// 开始时间
+        /// 开始时间yyyyMMddHHmmss
         /// </summary>
         public virtual string StartTime { get; set; }
         /// <summary>
-        /// 开始时间
+        /// 开始时间yyyyMMddHHmmss
         /// </summary>
         public virtual string EndTime { get; set; }
 
