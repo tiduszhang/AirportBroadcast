@@ -198,22 +198,6 @@ namespace AirportBroadcast.Equipment
         /// </summary>
         public string DIVR { get; set; }
 
-        #endregion
-       
-        #region NA航班性质基础数据
-
-        ///// <summary>
-        ///// 航班性质代码
-        ///// </summary>
-        //public string TTYP { get; set; }
-
-        /// <summary>
-        /// 航班性质名称
-        /// </summary>
-        public string TNAMME { get; set; }
-
-
-        #endregion
-         
+        #endregion 
     }
 }

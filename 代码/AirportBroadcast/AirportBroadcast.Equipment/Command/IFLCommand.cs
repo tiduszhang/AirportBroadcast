@@ -16,11 +16,15 @@ namespace AirportBroadcast.Equipment
         /// </summary>
         public virtual string CommandString { get; set; }
 
+
+
         /// <summary>
         /// 解析指令内容
         /// </summary>
         public virtual void Analysis()
-        {
+        { 
+            var data = CommandString.Substring(1 + 5 + 3);//去除头部
+
 
         }
     }
