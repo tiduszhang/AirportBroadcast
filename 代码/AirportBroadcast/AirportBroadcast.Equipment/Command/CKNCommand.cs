@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AirportBroadcast.Equipment
 {
     /// <summary>
-    /// 重新值机（重新办理乘机手续）
+    /// 重新值机（重新办理乘机手续）------------- 暂不使用
     /// </summary>
     public class CKNCommand
     {
@@ -20,6 +20,13 @@ namespace AirportBroadcast.Equipment
         /// 解析指令内容
         /// </summary>
         public virtual void Analysis()
+        {
+
+        }
+        /// <summary>
+        /// 保存
+        /// </summary>
+        public virtual void Save()
         {
 
         }

@@ -51,22 +51,24 @@ namespace AirportBroadcast.Equipment
 
         #endregion
 
-        #region SV航班服务基础数据字段
-
-        ///// <summary>
-        ///// 服务代码
-        ///// </summary>
-        //public string SRNU { get; set; }
+        #region 航班对应属性
 
         /// <summary>
-        /// 服务中文描述
+        /// FLNO，所属航班的航班号（不足9位左边补空格）
         /// </summary>
-        public string SRDC { get; set; }
-
+        public string FLNO { get; set; }
         /// <summary>
-        /// 服务英文描述
+        /// AORD，所属航班的进出港标志  A 表示进港，D表示出港 1位 
         /// </summary>
-        public string SRDE { get; set; }
+        public string AORD { get; set; }
+        /// <summary>
+        /// STOA或STOD，所属航班的计划时间  A 表示进港，D表示出港 1位 
+        /// </summary>
+        public string STOA { get; set; }
+        /// <summary>
+        /// STOA或STOD，所属航班的计划时间  A 表示进港，D表示出港 1位 
+        /// </summary>
+        public string STOD { get; set; }
 
         #endregion
     }

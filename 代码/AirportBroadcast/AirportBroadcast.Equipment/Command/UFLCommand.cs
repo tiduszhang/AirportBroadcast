@@ -66,5 +66,12 @@ namespace AirportBroadcast.Equipment
                 }
             }
         }
+        /// <summary>
+        /// 保存
+        /// </summary>
+        public virtual void Save()
+        {
+
+        }
     }
 }

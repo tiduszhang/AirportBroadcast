@@ -48,5 +48,13 @@ namespace AirportBroadcast.Equipment
             EndTime = EndTime.PadRight(14, '0');
             return StartTime + EndTime;
         }
+
+        /// <summary>
+        /// 保存
+        /// </summary>
+        public virtual void Save()
+        {
+
+        }
     }
 }

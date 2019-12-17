@@ -17,9 +17,41 @@ namespace AirportBroadcast.Equipment
         public virtual string CommandString { get; set; }
 
         /// <summary>
+        /// 航班服务信息
+        /// </summary>
+        public virtual FlightServer FlightServer { get; set; }
+
+        /// <summary>
         /// 解析指令内容
         /// </summary>
         public virtual void Analysis()
+        {
+            var data = CommandString.Substring(1 + 5 + 3);//去除头部
+
+            FlightServer = new FlightServer();
+             
+            var fieldValues = data.Split(new char[] { '#' }, StringSplitOptions.RemoveEmptyEntries);
+
+            var type = FlightServer.GetType();
+
+            var i = 0;
+            foreach (var fieldValue in fieldValues)
+            {
+                var temp = fieldValue.Split('=');
+                var field = temp[0];//属性名称
+                var value = temp[1];//属性对应的值
+                var property = type.GetProperty(field);
+                if (property != null)
+                {
+                    i++;
+                    property.SetValue(FlightServer, value);
+                }
+            }
+        }
+        /// <summary>
+        /// 保存
+        /// </summary>
+        public virtual void Save()
         {
 
         }

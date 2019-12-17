@@ -28,5 +28,13 @@ namespace AirportBroadcast.Equipment
             var data = CommandString.Substring(1 + 5 + 3);//去除头部
             URNO = data.Trim(); // 航班URNO
         }
+
+        /// <summary>
+        /// 保存
+        /// </summary>
+        public virtual void Save()
+        {
+
+        }
     }
 }

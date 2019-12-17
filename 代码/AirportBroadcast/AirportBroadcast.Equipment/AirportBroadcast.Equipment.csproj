@@ -84,6 +84,8 @@
     <Compile Include="Data\DelayLoss.cs" />
     <Compile Include="Data\FlightNature.cs" />
     <Compile Include="Data\FlightRemark.cs" />
+    <Compile Include="Data\FlightDescribe.cs" />
+    <Compile Include="Data\UrgeInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TAClientConnector.cs" />
     <Compile Include="TAClientHelp.cs" />
