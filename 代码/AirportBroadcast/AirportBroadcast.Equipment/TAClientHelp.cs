@@ -109,6 +109,10 @@ namespace AirportBroadcast.Equipment
         /// <returns></returns>
         public static string[] GetMessages()
         {
+            if(_Messages == null)
+            {
+                return null;
+            }
             string[] message = null;
             lock (_Messages)
             {

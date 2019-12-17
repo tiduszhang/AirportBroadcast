@@ -59,60 +59,67 @@ namespace AirportBroadcast.Equipment
                 {
                     case CommandType.AFL:
                         CommandData = new AFLCommand();
+                        Message = String.Format("查询航班信息指令：【{0}】", CommandString);
                         break;
                     case CommandType.ABD:
                         CommandData = new ABDCommand();
+                        Message = String.Format("查询基础数据指令：【{0}】", CommandString);
                         break;
                     case CommandType.FIL:
                         CommandData = new FILCommand();
+                        Message = String.Format("返回查询结果所存的文件名(用于批量航班查询反馈)指令：【{0}】", CommandString);
                         break;
                     case CommandType.NTI:
                         CommandData = new NTICommand();
+                        Message = String.Format("通知取文件(航班计划文件)指令：【{0}】", CommandString);
                         break;
                     case CommandType.UFL:
                         CommandData = new UFLCommand();
+                        Message = String.Format("更新航班指令：【{0}】", CommandString);
                         break;
                     case CommandType.IFL:
                         CommandData = new IFLCommand();
+                        Message = String.Format("新增航班指令：【{0}】", CommandString);
                         break;
                     case CommandType.DFL:
                         CommandData = new DFLCommand();
+                        Message = String.Format("删除航班指令：【{0}】", CommandString);
                         break;
                     case CommandType.USR:
                         CommandData = new USRCommand();
+                        Message = String.Format("更新航班服务指令：【{0}】", CommandString);
                         break;
                     case CommandType.ISR:
                         CommandData = new ISRCommand();
+                        Message = String.Format("新增航班服务指令：【{0}】", CommandString);
                         break;
                     case CommandType.DSR:
                         CommandData = new DSRCommand();
+                        Message = String.Format("删除航班服务指令：【{0}】", CommandString);
                         break;
                     case CommandType.URG:
                         CommandData = new URGCommand();
+                        Message = String.Format("催促登机指令：【{0}】", CommandString);
                         break;
                     case CommandType.CKN:
                         CommandData = new CKNCommand();
+                        Message = String.Format("重新值机（重新办理乘机手续）指令------------- 暂不使用，这个指令应该不存在 ：【{0}】", CommandString);
                         break;
                     default:
                         CommandData = new Command(); //非法指令不解析直接输出
+                        Message = String.Format("非法指令不解析 ：【{0}】", CommandString);
                         break;
                 }
-                if (CommandData is Command)
-                {
-                    Message = String.Format("非法指令：【{0}】", CommandString);
-                }
-                else
+                if (!(CommandData is Command))
                 {
                     CommandData.CommandString = CommandString;
-
                     CommandData.Analysis();
-                    Message = String.Format("正确指令：【{0}】", CommandString); ;
                 }
             }
             catch (Exception ex)
             {
                 ex.ToString();
-                Message = String.Format("非法指令：【{0}】", CommandString); ;
+                Message = String.Format("非法指令不解析：【{0}】", CommandString); ;
             }
         }
 

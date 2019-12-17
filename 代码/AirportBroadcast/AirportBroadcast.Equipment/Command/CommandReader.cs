@@ -101,10 +101,7 @@ namespace AirportBroadcast.Equipment
         {
             if (Commands == null)
             {
-                lock (Commands)
-                {
-                    Commands = new List<Command>();
-                }
+                return null;
             }
             Command[] commands = null;
             lock (Commands)
