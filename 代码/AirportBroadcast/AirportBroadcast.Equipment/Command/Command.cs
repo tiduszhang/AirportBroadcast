@@ -106,11 +106,11 @@ namespace AirportBroadcast.Equipment
                         Message = String.Format("重新值机（重新办理乘机手续）指令------------- 暂不使用，这个指令应该不存在 ：【{0}】", CommandString);
                         break;
                     default:
-                        CommandData = new Command(); //非法指令不解析直接输出
+                        //CommandData = new Command(); //非法指令不解析直接输出
                         Message = String.Format("非法指令不解析 ：【{0}】", CommandString);
                         break;
                 }
-                if (!(CommandData is Command))
+                if (CommandData != null)
                 {
                     CommandData.CommandString = CommandString;
                     CommandData.Analysis();
