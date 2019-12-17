@@ -12,6 +12,11 @@ namespace AirportBroadcast.Equipment
     public class AFLCommand
     {
         /// <summary>
+        /// 指令等级
+        /// </summary>
+        public readonly string CommandLevel = "U";
+
+        /// <summary>
         /// 指令字符串
         /// </summary>
         public virtual string CommandString { get; set; }
@@ -31,11 +36,11 @@ namespace AirportBroadcast.Equipment
         public virtual void Analysis()
         {
             var data = CommandString.Substring(1 + 5 + 3);//去除头部
-            if (data.Length == 14 + 14)
-            {
-                StartTime = data.Substring(0, 14);//开始时间长度14
-                EndTime = data.Substring(14, 14);//结束时间长度14
-            }
+            //if (data.Length == 14 + 14)
+            //{
+            //    StartTime = data.Substring(0, 14);//开始时间长度14
+            //    EndTime = data.Substring(14, 14);//结束时间长度14
+            //}
         }
 
         /// <summary>

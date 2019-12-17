@@ -130,7 +130,7 @@ namespace AirportBroadcast.Equipment
         public override string ToString()
         {
             //级别+编号+命令+数据
-            CommandString = Level + CommandNo + Enum.GetName(typeof(CommandType), CommandType) + CommandData.ToString();
+            CommandString = CommandData.CommandLevel + CommandNo.PadLeft(5, '0') + Enum.GetName(typeof(CommandType), CommandType) + CommandData.ToString();
             return CommandString;
         }
     }

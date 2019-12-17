@@ -95,6 +95,15 @@ namespace AirportBroadcast.Equipment
         }
 
         /// <summary>
+        /// 发送消息
+        /// </summary>
+        /// <param name="message"></param>
+        public static void Send(string message)
+        {
+            TAClientConnector.TAPutMsgExt(message);
+        }
+
+        /// <summary>
         /// 停止获取数据
         /// </summary>
         public static void StopRecivce()
@@ -109,7 +118,7 @@ namespace AirportBroadcast.Equipment
         /// <returns></returns>
         public static string[] GetMessages()
         {
-            if(_Messages == null)
+            if (_Messages == null)
             {
                 return null;
             }

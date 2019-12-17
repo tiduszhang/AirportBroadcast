@@ -12,6 +12,11 @@ namespace AirportBroadcast.Equipment
     public class FILCommand
     {
         /// <summary>
+        /// 指令等级
+        /// </summary>
+        public readonly string CommandLevel = "S";
+
+        /// <summary>
         /// 指令字符串
         /// </summary>
         public virtual string CommandString { get; set; }
