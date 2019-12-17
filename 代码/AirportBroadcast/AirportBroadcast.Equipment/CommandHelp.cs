@@ -155,11 +155,10 @@ namespace AirportBroadcast.Equipment
             {
                 if (SendCommands.Count > 0)
                 {
-                    //sendComm.Read();
-                    //SendCommands.Remove(sendComm);
                     var sendCommands = SendCommands.Where(sendCommand => sendCommand.ResaultCommand != null).ToList();
                     commands = sendCommands.ToArray();
                     SendCommands.RemoveAll(sendCommand => sendCommand.ResaultCommand != null);
+                    //sendComm.Read();//读取返回值
                 }
             }
             return commands;

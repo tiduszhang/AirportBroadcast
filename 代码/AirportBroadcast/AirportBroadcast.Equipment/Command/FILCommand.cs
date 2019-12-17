@@ -22,6 +22,16 @@ namespace AirportBroadcast.Equipment
         public virtual string CommandString { get; set; }
 
         /// <summary>
+        /// AP机场基础数据
+        /// </summary>
+        public virtual Airport Airport { get; set; }
+
+        /// <summary>
+        /// 子命令类型
+        /// </summary>
+        public virtual string Type { get; set; }
+
+        /// <summary>
         /// 解析指令内容
         /// </summary>
         public virtual void Analysis()
@@ -37,9 +47,40 @@ namespace AirportBroadcast.Equipment
         }
 
         /// <summary>
-        /// 读取航班信息
+        /// 读取信息
         /// </summary>
         public virtual void Read()
+        {
+            switch (this.Type)
+            {
+                case ABDCommand.AL:
+                    ReadAL();
+                    break;
+                case ABDCommand.AP:
+                    ReadAP();
+                    break;
+                case ABDCommand.DL:
+                    ReadDL();
+                    break;
+                case ABDCommand.NA:
+                    ReadNA();
+                    break;
+                case ABDCommand.RM:
+                    ReadRM();
+                    break;
+                case ABDCommand.SV:
+                    ReadSV();
+                    break;
+                default:
+                    ReadDefault();
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 读取航班信息数据
+        /// </summary>
+        public virtual void ReadDefault()
         {
 
         }
@@ -49,7 +90,27 @@ namespace AirportBroadcast.Equipment
         /// </summary>
         public virtual void ReadAP()
         {
+            var data = CommandString.Substring(1 + 5 + 3);//去除头部
 
+            Airport = new Airport();
+
+            var fieldValues = data.Split(new char[] { '#' }, StringSplitOptions.RemoveEmptyEntries);
+
+            var type = Airport.GetType();
+
+            var i = 0;
+            foreach (var fieldValue in fieldValues)
+            {
+                var temp = fieldValue.Split('=');
+                var field = temp[0];//属性名称
+                var value = temp[1];//属性对应的值
+                var property = type.GetProperty(field);
+                if (property != null)
+                {
+                    i++;
+                    property.SetValue(Airport, value);
+                }
+            }
         }
 
         /// <summary>

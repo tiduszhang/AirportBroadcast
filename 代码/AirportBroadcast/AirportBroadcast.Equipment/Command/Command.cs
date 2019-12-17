@@ -135,30 +135,8 @@ namespace AirportBroadcast.Equipment
         {
             try
             {
-                switch (CommandData.Type)
-                {
-                    case ABDCommand.AL:
-                        ResaultCommand.CommandData.ReadAL();
-                        break;
-                    case ABDCommand.AP:
-                        ResaultCommand.CommandData.ReadAP();
-                        break;
-                    case ABDCommand.DL:
-                        ResaultCommand.CommandData.ReadDL();
-                        break;
-                    case ABDCommand.NA:
-                        ResaultCommand.CommandData.ReadNA();
-                        break;
-                    case ABDCommand.RM:
-                        ResaultCommand.CommandData.ReadRM();
-                        break;
-                    case ABDCommand.SV:
-                        ResaultCommand.CommandData.ReadSV();
-                        break;
-                    default:
-                        ResaultCommand.CommandData.Read();
-                        break;
-                }
+                ResaultCommand.CommandData.Type = CommandData.Type;
+                ResaultCommand.CommandData.Read();
             }
             catch (Exception ex)
             {
