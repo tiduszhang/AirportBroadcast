@@ -35,5 +35,61 @@ namespace AirportBroadcast.Equipment
         {
 
         }
+
+        /// <summary>
+        /// 读取航班信息
+        /// </summary>
+        public virtual void Read()
+        {
+
+        }
+
+        /// <summary>
+        /// 读取AP机场基础数据
+        /// </summary>
+        public virtual void ReadAP()
+        {
+
+        }
+
+        /// <summary>
+        /// 读取AL航空公司基础数据
+        /// </summary>
+        public virtual void ReadAL()
+        {
+
+        }
+
+        /// <summary>
+        /// 读取SV航班服务基础数据
+        /// </summary>
+        public virtual void ReadSV()
+        {
+
+        }
+
+        /// <summary>
+        /// 读取RM航班备注基础数据
+        /// </summary>
+        public virtual void ReadRM()
+        {
+
+        }
+
+        /// <summary>
+        /// 读取DL延误代码基础数据
+        /// </summary>
+        public virtual void ReadDL()
+        {
+
+        }
+
+        /// <summary>
+        /// 读取NA航班性质基础数据
+        /// </summary>
+        public virtual void ReadNA()
+        {
+
+        }
     }
 }

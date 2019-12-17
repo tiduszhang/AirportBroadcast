@@ -15,20 +15,35 @@ namespace AirportBroadcast.Equipment
         /// <summary>
         /// 指令等级
         /// </summary>
-        public readonly string CommandLevel = "U";
+        public const string CommandLevel = "U";
 
         /// <summary>
         /// 子类型AP表示机场，AL表示航空公司，SV表示服务）
         /// </summary>
-        public static readonly string AP = "AP";
+        public const string AP = "AP";
         /// <summary>
         /// 子类型AP表示机场，AL表示航空公司，SV表示服务）
         /// </summary>
-        public static readonly string AL = "AL";
+        public const string AL = "AL";
         /// <summary>
         /// 子类型AP表示机场，AL表示航空公司，SV表示服务）
         /// </summary>
-        public static readonly string SV = "SV";
+        public const string SV = "SV";
+
+        /// <summary>
+        /// 子类型RM航班备注基础数据
+        /// </summary>
+        public const string RM = "RM";
+
+        /// <summary>
+        /// DL延误代码基础数据
+        /// </summary>
+        public const string DL = "DL";
+
+        /// <summary>
+        /// NA航班性质基础数据
+        /// </summary>
+        public const string NA = "NA";
 
         /// <summary>
         /// 指令字符串
@@ -45,7 +60,7 @@ namespace AirportBroadcast.Equipment
         /// </summary>
         public virtual void Analysis()
         {
-            var data = CommandString.Substring(1 + 5 + 3);//去除头部
+            //var data = CommandString.Substring(1 + 5 + 3);//去除头部
 
         }
 

@@ -12,9 +12,14 @@ namespace AirportBroadcast.Equipment
     public class CommandHelp
     {
         /// <summary>
-        /// 解析后的指令集
+        /// 航显主动推送解析后的指令集
         /// </summary>
         private static List<Command> Commands { get; set; }
+
+        /// <summary>
+        /// 请求航显数据指令集
+        /// </summary>
+        private static List<Command> SendCommands { get; set; }
 
         /// <summary>
         /// 是否开始运行
@@ -36,6 +41,12 @@ namespace AirportBroadcast.Equipment
             {
                 Commands = new List<Command>();
             }
+
+            if (SendCommands == null)
+            {
+                SendCommands = new List<Command>();
+            }
+
             TAClientHelp.StartRecivce();
 
             Task.Factory.StartNew(() =>
@@ -52,9 +63,23 @@ namespace AirportBroadcast.Equipment
                             var command = Analysis(message);
                             if (command != null)
                             {
-                                lock (Commands)
+                                if (command.CommandType == CommandType.FIL)
                                 {
-                                    Commands.Add(command);
+                                    lock (SendCommands)
+                                    {
+                                        var sendComm = SendCommands.FirstOrDefault(sendCommand => sendCommand.CommandNo == command.CommandNo);
+                                        if (sendComm != null)
+                                        {
+                                            sendComm.ResaultCommand = command;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    lock (Commands)
+                                    {
+                                        Commands.Add(command);
+                                    }
                                 }
                             }
                         });
@@ -115,6 +140,46 @@ namespace AirportBroadcast.Equipment
             return commands;
         }
 
+        /// <summary>
+        /// 获取发送的指令
+        /// </summary>
+        /// <returns></returns>
+        public static Command[] GetSendCommands()
+        {
+            if (SendCommands == null)
+            {
+                return null;
+            }
+            Command[] commands = null;
+            lock (SendCommands)
+            {
+                if (SendCommands.Count > 0)
+                {
+                    //sendComm.Read();
+                    //SendCommands.Remove(sendComm);
+                    var sendCommands = SendCommands.Where(sendCommand => sendCommand.ResaultCommand != null).ToList();
+                    commands = sendCommands.ToArray();
+                    SendCommands.RemoveAll(sendCommand => sendCommand.ResaultCommand != null);
+                }
+            }
+            return commands;
+        }
 
+        /// <summary>
+        /// 发送指令数据
+        /// </summary>
+        /// <param name="command"></param>
+        public static void SendCommand(Command command)
+        {
+            var commandNo = DateTime.Now.ToString().GetHashCode().ToString();
+            command.CommandNo = commandNo.Length > 5 ? commandNo.Substring(0, 5) : commandNo;
+
+            lock (SendCommands)
+            {
+                SendCommands.Add(command);
+            }
+
+            TAClientHelp.Send(command.ToCommandString());
+        }
     }
 }

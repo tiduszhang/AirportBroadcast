@@ -42,6 +42,11 @@ namespace AirportBroadcast.Equipment
         public virtual string Message { get; set; }
 
         /// <summary>
+        /// 结果指令
+        /// </summary>
+        public Command ResaultCommand { get; set; }
+
+        /// <summary>
         /// 解析指令内容
         /// </summary>
         public virtual void Analysis()
@@ -124,15 +129,54 @@ namespace AirportBroadcast.Equipment
         }
 
         /// <summary>
+        /// 读取数据
+        /// </summary>
+        public void Read()
+        {
+            try
+            {
+                switch (CommandData.Type)
+                {
+                    case ABDCommand.AL:
+                        ResaultCommand.CommandData.ReadAL();
+                        break;
+                    case ABDCommand.AP:
+                        ResaultCommand.CommandData.ReadAP();
+                        break;
+                    case ABDCommand.DL:
+                        ResaultCommand.CommandData.ReadDL();
+                        break;
+                    case ABDCommand.NA:
+                        ResaultCommand.CommandData.ReadNA();
+                        break;
+                    case ABDCommand.RM:
+                        ResaultCommand.CommandData.ReadRM();
+                        break;
+                    case ABDCommand.SV:
+                        ResaultCommand.CommandData.ReadSV();
+                        break;
+                    default:
+                        ResaultCommand.CommandData.Read();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                Message = "指令解析异常";
+            }
+        }
+
+        /// <summary>
         /// 字符串转换方法
         /// </summary>
         /// <returns></returns>
         public string ToCommandString()
         {
             //级别+编号+命令+数据
-            CommandString = CommandData.CommandLevel + CommandNo.PadLeft(5, '0') + Enum.GetName(typeof(CommandType), CommandType) + CommandData.ToString();
+            CommandString = Level + CommandNo.PadLeft(5, '0') + Enum.GetName(typeof(CommandType), CommandType) + CommandData.ToString();
             return CommandString;
         }
-         
+
     }
 }
