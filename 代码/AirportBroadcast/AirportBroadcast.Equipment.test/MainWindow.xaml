@@ -7,8 +7,8 @@
         mc:Ignorable="d" 
         Title="测试窗口" Height="450" Width="800">
     <Grid>
-        <Button Click="Button_Click" Content="测试" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <ListBox Name="lstMsg" Margin="20"  >
+        <Button Click="Button_Click" Content="测试连接" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"/>
+        <ListBox Name="lstMsg" Margin="10,35"  >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock  Text="{Binding}"/>
