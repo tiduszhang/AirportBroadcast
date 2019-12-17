@@ -45,6 +45,7 @@ namespace AirportBroadcast.Equipment.test
             isRun = true;
             CommandReader.StartRead();
 
+            //将获取到的数据展现到界面
             Task.Factory.StartNew(() =>
             {
                 while (isRun)
@@ -61,7 +62,7 @@ namespace AirportBroadcast.Equipment.test
                         this.Dispatcher.Invoke(() =>
                         {
                             Items.Insert(0, command.Message);
-                        }, System.Windows.Threading.DispatcherPriority.Loaded);
+                        });
                     });
 
                     if (Items.Count > 100)
@@ -72,7 +73,7 @@ namespace AirportBroadcast.Equipment.test
                             {
                                 Items.RemoveAt(Items.Count - 1);
                             }
-                        }, System.Windows.Threading.DispatcherPriority.Loaded);
+                        });
                     }
                 }
             });
