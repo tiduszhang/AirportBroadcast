@@ -20,12 +20,7 @@ namespace AirportBroadcast.Equipment
         /// 指令字符串
         /// </summary>
         public virtual string CommandString { get; set; }
-
-        /// <summary>
-        /// AP机场基础数据
-        /// </summary>
-        public virtual Airport Airport { get; set; }
-
+         
         /// <summary>
         /// 子命令类型
         /// </summary>
@@ -91,26 +86,7 @@ namespace AirportBroadcast.Equipment
         public virtual void ReadAP()
         {
             var data = CommandString.Substring(1 + 5 + 3);//去除头部
-
-            Airport = new Airport();
-
-            var fieldValues = data.Split(new char[] { '#' }, StringSplitOptions.RemoveEmptyEntries);
-
-            var type = Airport.GetType();
-
-            var i = 0;
-            foreach (var fieldValue in fieldValues)
-            {
-                var temp = fieldValue.Split('=');
-                var field = temp[0];//属性名称
-                var value = temp[1];//属性对应的值
-                var property = type.GetProperty(field);
-                if (property != null)
-                {
-                    i++;
-                    property.SetValue(Airport, value);
-                }
-            }
+             
         }
 
         /// <summary>
@@ -118,7 +94,8 @@ namespace AirportBroadcast.Equipment
         /// </summary>
         public virtual void ReadAL()
         {
-
+            var data = CommandString.Substring(1 + 5 + 3);//去除头部
+             
         }
 
         /// <summary>
@@ -126,7 +103,8 @@ namespace AirportBroadcast.Equipment
         /// </summary>
         public virtual void ReadSV()
         {
-
+            var data = CommandString.Substring(1 + 5 + 3);//去除头部
+             
         }
 
         /// <summary>
@@ -134,7 +112,8 @@ namespace AirportBroadcast.Equipment
         /// </summary>
         public virtual void ReadRM()
         {
-
+            var data = CommandString.Substring(1 + 5 + 3);//去除头部
+             
         }
 
         /// <summary>
@@ -142,7 +121,8 @@ namespace AirportBroadcast.Equipment
         /// </summary>
         public virtual void ReadDL()
         {
-
+            var data = CommandString.Substring(1 + 5 + 3);//去除头部
+             
         }
 
         /// <summary>
@@ -150,7 +130,8 @@ namespace AirportBroadcast.Equipment
         /// </summary>
         public virtual void ReadNA()
         {
-
+            var data = CommandString.Substring(1 + 5 + 3);//去除头部
+             
         }
     }
 }
