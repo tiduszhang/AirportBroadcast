@@ -38,7 +38,44 @@ namespace AirportBroadcast.Equipment.test
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (isRun)
+            {
+                return;
+            }
+            isRun = true;
             CommandReader.StartRead();
+
+            Task.Factory.StartNew(() =>
+            {
+                while (isRun)
+                {
+                    System.Threading.Thread.Sleep(1);
+                    var commands = CommandReader.GetCommands();
+                    if (commands == null)
+                    {
+                        continue;
+                    }
+
+                    commands.ToList().ForEach(command =>
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            Items.Insert(0, command.Message);
+                        }, System.Windows.Threading.DispatcherPriority.Loaded);
+                    });
+
+                    if (Items.Count > 100)
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            while (Items.Count > 100)
+                            {
+                                Items.RemoveAt(Items.Count - 1);
+                            }
+                        }, System.Windows.Threading.DispatcherPriority.Loaded);
+                    }
+                }
+            });
         }
 
         /// <summary>

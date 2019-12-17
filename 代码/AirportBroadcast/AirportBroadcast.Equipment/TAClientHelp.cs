@@ -81,7 +81,8 @@ namespace AirportBroadcast.Equipment
                             //System.Threading.Thread.SpinWait(1);
                             lock (_Messages)
                             {
-                                _Messages.Add(msg.ToString());
+                                _Messages.Add(msg.ToString().Trim());
+                                msg.Clear();
                             }
                         }
                     }

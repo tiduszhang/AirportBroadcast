@@ -37,107 +37,83 @@ namespace AirportBroadcast.Equipment
         public virtual dynamic CommandData { get; set; }
 
         /// <summary>
+        /// 消息内容
+        /// </summary>
+        public virtual string Message { get; set; }
+
+        /// <summary>
         /// 解析指令内容
         /// </summary>
         public virtual void Analysis()
         {
-            var head = CommandString.Substring(0, 9);
-            Level = head.Substring(0, 1);
-            CommandNo = head.Substring(1, 5);
-
-            var type = CommandString.Substring(6, 3);
-            CommandType = (CommandType)Enum.Parse(typeof(CommandType), type);
-
-            switch (CommandType)//根据不同的类型选择不同的指令解析
+            try
             {
-                case CommandType.AFL:
-                    CommandData = new AFLCommand
-                    {
-                        CommandString = CommandString
-                    };
-                    CommandData.Analysis();
-                    break;
-                case CommandType.ABD:
-                    CommandData = new ABDCommand
-                    {
-                        CommandString = CommandString
-                    };
-                    CommandData.Analysis();
-                    break;
-                case CommandType.FIL:
-                    CommandData = new FILCommand
-                    {
-                        CommandString = CommandString
-                    };
-                    CommandData.Analysis();
-                    break;
-                case CommandType.NTI:
-                    CommandData = new NTICommand
-                    {
-                        CommandString = CommandString
-                    };
-                    CommandData.Analysis();
-                    break;
-                case CommandType.UFL:
-                    CommandData = new UFLCommand
-                    {
-                        CommandString = CommandString
-                    };
-                    CommandData.Analysis();
-                    break;
-                case CommandType.IFL:
-                    CommandData = new IFLCommand
-                    {
-                        CommandString = CommandString
-                    };
-                    CommandData.Analysis();
-                    break;
-                case CommandType.DFL:
-                    CommandData = new DFLCommand
-                    {
-                        CommandString = CommandString
-                    };
-                    CommandData.Analysis();
-                    break;
-                case CommandType.USR:
-                    CommandData = new USRCommand
-                    {
-                        CommandString = CommandString
-                    };
-                    CommandData.Analysis();
-                    break;
-                case CommandType.ISR:
-                    CommandData = new ISRCommand
-                    {
-                        CommandString = CommandString
-                    };
-                    CommandData.Analysis();
-                    break;
-                case CommandType.DSR:
-                    CommandData = new DSRCommand
-                    {
-                        CommandString = CommandString
-                    };
-                    CommandData.Analysis();
-                    break;
-                case CommandType.URG:
-                    CommandData = new URGCommand
-                    {
-                        CommandString = CommandString
-                    };
-                    CommandData.Analysis();
-                    break;
-                case CommandType.CKN:
-                    CommandData = new CKNCommand
-                    {
-                        CommandString = CommandString
-                    };
-                    CommandData.Analysis();
-                    break;
-                default:
-                    break;
-            }
+                var head = CommandString.Substring(0, 9);
+                Level = head.Substring(0, 1);
+                CommandNo = head.Substring(1, 5);
 
+                var type = CommandString.Substring(6, 3);
+                CommandType = (CommandType)Enum.Parse(typeof(CommandType), type);
+
+                switch (CommandType)//根据不同的类型选择不同的指令解析
+                {
+                    case CommandType.AFL:
+                        CommandData = new AFLCommand();
+                        break;
+                    case CommandType.ABD:
+                        CommandData = new ABDCommand();
+                        break;
+                    case CommandType.FIL:
+                        CommandData = new FILCommand();
+                        break;
+                    case CommandType.NTI:
+                        CommandData = new NTICommand();
+                        break;
+                    case CommandType.UFL:
+                        CommandData = new UFLCommand();
+                        break;
+                    case CommandType.IFL:
+                        CommandData = new IFLCommand();
+                        break;
+                    case CommandType.DFL:
+                        CommandData = new DFLCommand();
+                        break;
+                    case CommandType.USR:
+                        CommandData = new USRCommand();
+                        break;
+                    case CommandType.ISR:
+                        CommandData = new ISRCommand();
+                        break;
+                    case CommandType.DSR:
+                        CommandData = new DSRCommand();
+                        break;
+                    case CommandType.URG:
+                        CommandData = new URGCommand();
+                        break;
+                    case CommandType.CKN:
+                        CommandData = new CKNCommand();
+                        break;
+                    default:
+                        CommandData = new Command(); //非法指令不解析直接输出
+                        break;
+                }
+                if (CommandData is Command)
+                {
+                    Message = String.Format("非法指令：【{0}】", CommandString);
+                }
+                else
+                {
+                    CommandData.CommandString = CommandString;
+
+                    CommandData.Analysis();
+                    Message = String.Format("正确指令：【{0}】", CommandString); ;
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                Message = String.Format("非法指令：【{0}】", CommandString); ;
+            }
         }
 
         /// <summary>

@@ -85,17 +85,37 @@ namespace AirportBroadcast.Equipment
             {
                 return command;
             }
-            if (commandString.Length <= 9)//过滤无效指令
-            {
-                return command;
-            }
             command = new Command()//指令解析
             {
                 CommandString = commandString
             };
             command.Analysis();
-          
             return command;
+        }
+
+        /// <summary>
+        /// 获取命令数据列表
+        /// </summary>
+        /// <returns></returns>
+        public static Command[] GetCommands()
+        {
+            if (Commands == null)
+            {
+                lock (Commands)
+                {
+                    Commands = new List<Command>();
+                }
+            }
+            Command[] commands = null;
+            lock (Commands)
+            {
+                if (Commands.Count > 0)
+                {
+                    commands = Commands.ToArray();
+                    Commands.Clear();
+                }
+            }
+            return commands;
         }
     }
 }
