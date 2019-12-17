@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Airport.cs" />
-    <Compile Include="Command\CommandReader.cs" />
+    <Compile Include="CommandHelp.cs" />
     <Compile Include="Command\ABDCommand.cs" />
     <Compile Include="Command\AFLCommand.cs" />
     <Compile Include="Command\CKNCommand.cs" />

@@ -43,7 +43,7 @@ namespace AirportBroadcast.Equipment.test
                 return;
             }
             isRun = true;
-            CommandReader.StartRead();
+            CommandHelp.StartRead();
 
             //将获取到的数据展现到界面
             Task.Factory.StartNew(() =>
@@ -51,7 +51,7 @@ namespace AirportBroadcast.Equipment.test
                 while (isRun)
                 {
                     System.Threading.Thread.Sleep(1);
-                    var commands = CommandReader.GetCommands();
+                    var commands = CommandHelp.GetCommands();
                     if (commands == null)
                     {
                         continue;
@@ -86,7 +86,7 @@ namespace AirportBroadcast.Equipment.test
         protected override void OnClosed(EventArgs e)
         {
             isRun = false;
-            CommandReader.StopRead();
+            CommandHelp.StopRead();
             base.OnClosed(e);
         }
     }

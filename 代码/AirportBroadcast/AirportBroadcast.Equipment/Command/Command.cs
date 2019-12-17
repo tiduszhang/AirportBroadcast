@@ -127,11 +127,12 @@ namespace AirportBroadcast.Equipment
         /// 字符串转换方法
         /// </summary>
         /// <returns></returns>
-        public override string ToString()
+        public string ToCommandString()
         {
             //级别+编号+命令+数据
             CommandString = CommandData.CommandLevel + CommandNo.PadLeft(5, '0') + Enum.GetName(typeof(CommandType), CommandType) + CommandData.ToString();
             return CommandString;
         }
+         
     }
 }
