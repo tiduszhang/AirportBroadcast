@@ -93,7 +93,8 @@ namespace AirportBroadcast.Equipment
 
             AirShowData airShowData = new AirShowData();
 
-            airShowData.RouteType = "MODIFY";
+            airShowData.RouteType = "MODIFY";//关键字标识 MODIFY 修改
+            airShowData.LocalAirportCode = "LUM";//本地机场标识
 
             airShowData.Routeoid = FlightInfo.URNO;//航班主键
             airShowData.Shareflightno = FlightInfo.JFNO;//共享航班号
@@ -102,8 +103,10 @@ namespace AirportBroadcast.Equipment
             airShowData.AirlineCode2 = FlightInfo.FLNO.Substring(0, 2);//航班号前半部分
             airShowData.FlightNum = FlightInfo.FLNO.Substring(2);//航班号后半部分
 
-            airShowData.FlightMssion = FlightInfo.TTYP;//航班性质 
-            airShowData.FlightType = FlightInfo.FLTI;//航班类型
+            airShowData.FlightMssion = FlightInfo.TTYP;//航班性质
+            //航班类型 I	国际 D	国内  Q	地区
+            //航班区域属性（国际、国内、混合、地区，I表示国际航班、D表示国内航班、M表示混合航班、R表示港澳航班）
+            airShowData.FlightType = FlightInfo.FLTI;//航班类型 
 
             airShowData.DepFIV1NO3 = FlightInfo.VIA3;//出港经停1三字码  进港航班的最后一个经停机场/出港航班的第一个经停机场的三字代码
             airShowData.DepFIV1NO4 = FlightInfo.VIA4;//出港经停1四字码  进港航班的最后一个经停机场/出港航班的第一个经停机场的三字代码
@@ -145,15 +148,23 @@ namespace AirportBroadcast.Equipment
             {
                 airShowData.ArriveTime = Utils.ToDateTime(FlightInfo.LNDU);//实际落地时间
             }
+
             airShowData.FlightStatus = FlightInfo.STAT;//航班状态
 
             airShowData.FlightCirculationStatus = FlightInfo.STAT; //航班流转状态   
 
-            airShowData.Gate = FlightInfo.GAT1;//登机口 FlightInfo.GAT2
+            airShowData.Gate = String.IsNullOrWhiteSpace(FlightInfo.GAT1) ? FlightInfo.GAT1 : FlightInfo.GAT2;//登机口 FlightInfo.GAT2
 
-            airShowData.Carousel = FlightInfo.BLT1;//行李转盘FlightInfo.BLT2
+            airShowData.Carousel = String.IsNullOrWhiteSpace(FlightInfo.BLT1) ? FlightInfo.BLT1 : FlightInfo.BLT1;//行李转盘FlightInfo.BLT2
 
-            airShowData.DeporArrCode = FlightInfo.AORD;//进出港标记
+            if (FlightInfo.AORD == "A")//（A表示进港，D表示出港）
+            {
+                airShowData.DeporArrCode = "J";//进出港标记 J/ C	进/出
+            }
+            else if (FlightInfo.AORD == "D")
+            {
+                airShowData.DeporArrCode = "C";//进出港标记  J/ C	进/出
+            }
 
             airShowData.Dlytype = FlightInfo.DLCD;//延误类型
             airShowData.Dlytime = FlightInfo.DLTI;//延误时间

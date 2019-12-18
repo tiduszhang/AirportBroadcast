@@ -76,7 +76,8 @@ namespace AirportBroadcast.Equipment
 
             AirShowData airShowData = new AirShowData();
 
-            airShowData.RouteType = "MODIFY";
+            airShowData.RouteType = "CREATED";//关键字标识 CREATED 创建
+            airShowData.LocalAirportCode = "LUM";//本地机场标识
 
             airShowData.Routeoid = FlightInfo.URNO;//航班主键
             airShowData.Shareflightno = FlightInfo.JFNO;//共享航班号
@@ -135,9 +136,9 @@ namespace AirportBroadcast.Equipment
 
             airShowData.FlightCirculationStatus = FlightInfo.STAT; //航班流转状态   
 
-            airShowData.Gate = FlightInfo.GAT1;//登机口 FlightInfo.GAT2
+            airShowData.Gate = String.IsNullOrWhiteSpace(FlightInfo.GAT1) ? FlightInfo.GAT1 : FlightInfo.GAT2;//登机口 FlightInfo.GAT2
 
-            airShowData.Carousel = FlightInfo.BLT1;//行李转盘FlightInfo.BLT2
+            airShowData.Carousel = String.IsNullOrWhiteSpace(FlightInfo.BLT1) ? FlightInfo.BLT1 : FlightInfo.BLT1;//行李转盘FlightInfo.BLT2
 
             if (FlightInfo.AORD == "A")//（A表示进港，D表示出港）
             {
