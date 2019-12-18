@@ -82,9 +82,17 @@ namespace AirportBroadcast.Equipment
 
                     commands.ToList().ForEach(command =>
                     {
-                        if (!String.IsNullOrWhiteSpace(command.CommandData.MQCommand))
+                        try
+                        { 
+                            var commandString = command.CommandData.CreateMQCommand();
+                            if (!String.IsNullOrWhiteSpace(commandString))
+                            {
+                                SendMessage(commandString);
+                            }
+                        }
+                        catch (Exception ex)
                         {
-                            SendMessage(command.CommandData.MQCommand);
+                            ex.ToString();
                         }
                     });
                 }

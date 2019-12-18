@@ -44,39 +44,39 @@ namespace AirportBroadcast.Equipment.test
             }
             isRun = true;
             CommandHelp.StartRead();
-
+            ActiveMQHelp.StartSend();
             //将获取到的数据展现到界面
-            Task.Factory.StartNew(() =>
-            {
-                while (isRun)
-                {
-                    System.Threading.Thread.Sleep(1);
-                    var commands = CommandHelp.GetCommands();
-                    if (commands == null)
-                    {
-                        continue;
-                    }
+            //Task.Factory.StartNew(() =>
+            //{
+            //    while (isRun)
+            //    {
+            //        System.Threading.Thread.Sleep(1);
+            //        var commands = CommandHelp.GetCommands();
+            //        if (commands == null)
+            //        {
+            //            continue;
+            //        }
 
-                    commands.ToList().ForEach(command =>
-                    {
-                        this.Dispatcher.Invoke(() =>
-                        {
-                            Items.Insert(0, command.Message);
-                        });
-                    });
+            //        commands.ToList().ForEach(command =>
+            //        {
+            //            this.Dispatcher.Invoke(() =>
+            //            {
+            //                Items.Insert(0, command.Message);
+            //            });
+            //        });
 
-                    if (Items.Count > 100)
-                    {
-                        this.Dispatcher.Invoke(() =>
-                        {
-                            while (Items.Count > 100)
-                            {
-                                Items.RemoveAt(Items.Count - 1);
-                            }
-                        });
-                    }
-                }
-            });
+            //        if (Items.Count > 100)
+            //        {
+            //            this.Dispatcher.Invoke(() =>
+            //            {
+            //                while (Items.Count > 100)
+            //                {
+            //                    Items.RemoveAt(Items.Count - 1);
+            //                }
+            //            });
+            //        }
+            //    }
+            //});
         }
 
         /// <summary>
@@ -86,6 +86,7 @@ namespace AirportBroadcast.Equipment.test
         protected override void OnClosed(EventArgs e)
         {
             isRun = false;
+            ActiveMQHelp.StopSend();
             CommandHelp.StopRead();
             base.OnClosed(e);
         }

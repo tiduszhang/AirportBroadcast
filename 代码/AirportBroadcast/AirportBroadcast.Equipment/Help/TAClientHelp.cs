@@ -53,12 +53,10 @@ namespace AirportBroadcast.Equipment
                 return;
             }
 
+            isRun = true;
+
             Task.Factory.StartNew(() =>
             {
-                isRun = true;
-
-                TAClientHelp.Connection();
-
                 StringBuilder msg = new StringBuilder(4096);
                 while (isRun)
                 {
