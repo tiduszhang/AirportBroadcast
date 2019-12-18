@@ -216,20 +216,16 @@ namespace AirportBroadcast.Equipment
             airShowData.FlightNum = this.FLNO.Substring(2);//航班号后半部分
 
             airShowData.DepFIV1NO3 = this.VIA3;//出港经停1三字码  进港航班的最后一个经停机场/出港航班的第一个经停机场的三字代码
-            airShowData.DepFIV1NO4 = this.VIA4;//出港经停1四字码  进港航班的最后一个经停机场/出港航班的第一个经停机场的三字代码
+            airShowData.DepFIV1NO4 = this.VIA4;//出港经停1四字码  进港航班的最后一个经停机场/出港航班的第一个经停机场的四字代码
 
             airShowData.ArrFIV1NO3 = this.VIA3;//进港经停1三字码 进港航班的最后一个经停机场/出港航班的第一个经停机场的三字代码
-            airShowData.ArrFIV1NO4 = this.VIA4;//进港经停1四字码 进港航班的最后一个经停机场/出港航班的第一个经停机场的三字代码
-
-            airShowData.Fiv1No4 = this.VIAL;//经停1四字码 顺序的航班经停机场列表（四字代码表示） this.VIAN 经停机场个数
-            airShowData.Fiv2No4 = this.VIAL;//经停2四字码 顺序的航班经停机场列表（四字代码表示） this.VIAN 经停机场个数
-
-
+            airShowData.ArrFIV1NO4 = this.VIA4;//进港经停1四字码 进港航班的最后一个经停机场/出港航班的第一个经停机场的四字代码
+             
             airShowData.ForgNo3 = this.ORG3;//起场三字码
             airShowData.ForgNo4 = this.ORG4;//起场四字码
 
-            airShowData.FestNo3 = this.DES3;//起场三字码
-            airShowData.FestNo4 = this.DES4;//起场四字码
+            airShowData.FestNo3 = this.DES3;//落场三字码
+            airShowData.FestNo4 = this.DES4;//落场四字码
 
             if (!String.IsNullOrWhiteSpace(this.STOD))
             {
@@ -258,7 +254,11 @@ namespace AirportBroadcast.Equipment
 
             airShowData.LocalAirportCode = "LUM";//本地机场标识
 
-            airShowData.FlightMssion = this.TTYP;//航班性质 
+            airShowData.FlightMssion = this.TTYP;//航班性质 W/Z
+
+            airShowData.Fiv1No4 = this.VIAL;//经停1四字码 顺序的航班经停机场列表（四字代码表示） this.VIAN 经停机场个数
+            airShowData.Fiv2No4 = this.VIAL;//经停2四字码 顺序的航班经停机场列表（四字代码表示） this.VIAN 经停机场个数
+
             //航班类型 I	国际 D	国内  Q	地区
             //航班区域属性（国际、国内、混合、地区，I表示国际航班、D表示国内航班、M表示混合航班、R表示港澳航班）
             airShowData.FlightType = this.FLTI;//航班类型 
