@@ -35,6 +35,7 @@
             this.btnSP = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
+            this.btnTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnInstall
@@ -97,11 +98,23 @@
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(43, 163);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTest.TabIndex = 7;
+            this.btnTest.Tag = "测试功能，不注册启动服务。";
+            this.btnTest.Text = "测试";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
             // frmServiceTools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(276, 174);
+            this.ClientSize = new System.Drawing.Size(276, 215);
+            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnSP);
@@ -127,5 +140,6 @@
         private System.Windows.Forms.Button btnSP;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnTest;
     }
 }

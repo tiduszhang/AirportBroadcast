@@ -109,5 +109,15 @@ namespace AirportBroadcast.Equipment.Service
             MessageBox.Show(String.Format("服务状态为：{0}", Status), "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// 测试功能不启动服务
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnTest_Click(object sender, EventArgs e)
+        { 
+            CommandHelp.StartRead();
+            ActiveMQHelp.StartSend();
+        }
     }
 }
