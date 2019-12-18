@@ -76,5 +76,6 @@ namespace AirportBroadcast.Equipment.Service
             string Status = serviceController.Status.ToString();
             MessageBox.Show(String.Format("服务状态为：{0}", Status), "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+         
     }
 }

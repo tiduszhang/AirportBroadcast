@@ -34,6 +34,7 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnSP = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnInstall
@@ -86,11 +87,22 @@
             this.btnCheck.UseVisualStyleBackColor = true;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(154, 68);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(75, 23);
+            this.btnStop.TabIndex = 6;
+            this.btnStop.Text = "停止";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
             // frmServiceTools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(276, 174);
+            this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnSP);
             this.Controls.Add(this.btnStart);
@@ -114,5 +126,6 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnSP;
         private System.Windows.Forms.Button btnCheck;
+        private System.Windows.Forms.Button btnStop;
     }
 }
