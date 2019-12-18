@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportBroadcast.EntityFram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportBroadcast.Equipment", "AirportBroadcast.Equipment\AirportBroadcast.Equipment.csproj", "{2A903A1C-5151-46BB-A4F2-0579C075058C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportBroadcast.Equipment.test", "AirportBroadcast.Equipment.test\AirportBroadcast.Equipment.test.csproj", "{F95F8B7E-E52E-48AF-8286-E42AD43D681E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportBroadcast.Equipment.Service", "AirportBroadcast.Equipment.Service\AirportBroadcast.Equipment.Service.csproj", "{3B798765-EBC5-4A4A-A75F-424E79B635BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,14 +73,14 @@ Global
 		{2A903A1C-5151-46BB-A4F2-0579C075058C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2A903A1C-5151-46BB-A4F2-0579C075058C}.Release|x86.ActiveCfg = Release|x86
 		{2A903A1C-5151-46BB-A4F2-0579C075058C}.Release|x86.Build.0 = Release|x86
-		{F95F8B7E-E52E-48AF-8286-E42AD43D681E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F95F8B7E-E52E-48AF-8286-E42AD43D681E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F95F8B7E-E52E-48AF-8286-E42AD43D681E}.Debug|x86.ActiveCfg = Debug|x86
-		{F95F8B7E-E52E-48AF-8286-E42AD43D681E}.Debug|x86.Build.0 = Debug|x86
-		{F95F8B7E-E52E-48AF-8286-E42AD43D681E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F95F8B7E-E52E-48AF-8286-E42AD43D681E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F95F8B7E-E52E-48AF-8286-E42AD43D681E}.Release|x86.ActiveCfg = Release|x86
-		{F95F8B7E-E52E-48AF-8286-E42AD43D681E}.Release|x86.Build.0 = Release|x86
+		{3B798765-EBC5-4A4A-A75F-424E79B635BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B798765-EBC5-4A4A-A75F-424E79B635BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B798765-EBC5-4A4A-A75F-424E79B635BA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3B798765-EBC5-4A4A-A75F-424E79B635BA}.Debug|x86.Build.0 = Debug|Any CPU
+		{3B798765-EBC5-4A4A-A75F-424E79B635BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B798765-EBC5-4A4A-A75F-424E79B635BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B798765-EBC5-4A4A-A75F-424E79B635BA}.Release|x86.ActiveCfg = Release|Any CPU
+		{3B798765-EBC5-4A4A-A75F-424E79B635BA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -56,5 +56,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AirportBroadcast.Equipment\AirportBroadcast.Equipment.csproj">
+      <Project>{2a903a1c-5151-46bb-a4f2-0579c075058c}</Project>
+      <Name>AirportBroadcast.Equipment</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
