@@ -262,6 +262,7 @@ namespace AirportBroadcast.Equipment
             }
             else if (!String.IsNullOrWhiteSpace(this.VIAN) && this.VIAN != "0")// == "2") 不等于空且不为0的时候截取两个
             {
+                //四字码拼接，但间隔符号未知
                 airShowData.Fiv1No4 = this.VIAL.Substring(0, 4);//经停1四字码 顺序的航班经停机场列表（四字代码表示） this.VIAN 经停机场个数
                 airShowData.Fiv2No4 = this.VIAL.Substring(4, 4);//经停2四字码 顺序的航班经停机场列表（四字代码表示） this.VIAN 经停机场个数
             }
@@ -269,6 +270,10 @@ namespace AirportBroadcast.Equipment
             //航班类型 I	国际 D	国内  Q	地区
             //航班区域属性（国际、国内、混合、地区，I表示国际航班、D表示国内航班、M表示混合航班、R表示港澳航班）
             airShowData.FlightType = this.FLTI;//航班类型 
+            if (this.FLTI == "M" || this.FLTI == "R")
+            {
+                airShowData.FlightType = "Q";
+            }
 
             airShowData.FlightStatus = this.STAT;//航班状态  缺少键值对应
             airShowData.FlightCirculationStatus = this.STAT; //航班流转状态    缺少键值对应
