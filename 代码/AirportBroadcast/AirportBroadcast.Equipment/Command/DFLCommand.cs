@@ -41,5 +41,21 @@ namespace AirportBroadcast.Equipment
         {
 
         }
+
+
+        /// <summary>
+        /// 创建MQ消息体
+        /// </summary>
+        public virtual string CreateMQCommand()
+        {
+            AirShowData airShowData = new AirShowData();
+
+            airShowData.RouteType = "DELETE";//关键字标识 MODIFY 修改
+            airShowData.LocalAirportCode = "LUM";//本地机场标识
+
+            airShowData.FlightNo2 = this.URNO;//航班号
+
+            return Newtonsoft.Json.JsonConvert.SerializeObject(airShowData);
+        }
     }
 }
