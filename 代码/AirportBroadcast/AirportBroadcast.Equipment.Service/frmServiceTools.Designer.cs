@@ -32,7 +32,6 @@
             this.btnInstall = new System.Windows.Forms.Button();
             this.btnUnInstall = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
             this.btnSP = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -67,16 +66,6 @@
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // btnStop
-            // 
-            this.btnStop.Location = new System.Drawing.Point(154, 68);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(75, 23);
-            this.btnStop.TabIndex = 3;
-            this.btnStop.Text = "停止";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
-            // 
             // btnSP
             // 
             this.btnSP.Location = new System.Drawing.Point(43, 115);
@@ -104,7 +93,6 @@
             this.ClientSize = new System.Drawing.Size(276, 174);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnSP);
-            this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnUnInstall);
             this.Controls.Add(this.btnInstall);
@@ -124,7 +112,6 @@
         private System.Windows.Forms.Button btnInstall;
         private System.Windows.Forms.Button btnUnInstall;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnSP;
         private System.Windows.Forms.Button btnCheck;
     }

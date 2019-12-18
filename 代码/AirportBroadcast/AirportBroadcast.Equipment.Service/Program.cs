@@ -18,18 +18,18 @@ namespace AirportBroadcast.Equipment.Service
         {
             if (args != null && args.Length > 0)
             {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new frmServiceTools());
-            }
-            else
-            {
-                ServiceBase[] ServicesToRun;
+               ServiceBase[] ServicesToRun;
                 ServicesToRun = new ServiceBase[]
                 {
                 new Service1()
                 };
                 ServiceBase.Run(ServicesToRun);
+            }
+            else
+            {   Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new frmServiceTools());
+              
             }
         }
     }
