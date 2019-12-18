@@ -132,13 +132,11 @@ namespace AirportBroadcast.Equipment
                 airShowData.ArriveTime = Utils.ToDateTime(FlightInfo.LNDU);//实际落地时间
             }
 
-            airShowData.FlightStatus = FlightInfo.STAT;//航班状态
-
-            airShowData.FlightCirculationStatus = FlightInfo.STAT; //航班流转状态   
+            airShowData.FlightStatus = FlightInfo.STAT;//航班状态  缺少键值对应
+            airShowData.FlightCirculationStatus = FlightInfo.STAT; //航班流转状态    缺少键值对应
 
             airShowData.Gate = !String.IsNullOrWhiteSpace(FlightInfo.GAT1) ? FlightInfo.GAT1 : FlightInfo.GAT2;//登机口 FlightInfo.GAT2
-
-            airShowData.Carousel = !String.IsNullOrWhiteSpace(FlightInfo.BLT1) ? FlightInfo.BLT1 : FlightInfo.BLT1;//行李转盘FlightInfo.BLT2
+            airShowData.Carousel = !String.IsNullOrWhiteSpace(FlightInfo.BLT1) ? FlightInfo.BLT1 : FlightInfo.BLT2;//行李转盘FlightInfo.BLT2
 
             if (FlightInfo.AORD == "A")//（A表示进港，D表示出港）
             {
