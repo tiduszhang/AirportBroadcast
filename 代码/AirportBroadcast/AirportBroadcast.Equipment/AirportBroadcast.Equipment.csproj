@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Airport.cs" />
-    <Compile Include="CommandHelp.cs" />
+    <Compile Include="Help\CommandHelp.cs" />
     <Compile Include="Command\ABDCommand.cs" />
     <Compile Include="Command\AFLCommand.cs" />
     <Compile Include="Command\CKNCommand.cs" />
@@ -86,11 +86,11 @@
     <Compile Include="Data\FlightRemark.cs" />
     <Compile Include="Data\FlightDescribe.cs" />
     <Compile Include="Data\UrgeInfo.cs" />
-    <Compile Include="FtpHelp.cs" />
-    <Compile Include="IniFileHelp.cs" />
+    <Compile Include="Help\FtpHelp.cs" />
+    <Compile Include="Help\IniFileHelp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TAClientConnector.cs" />
-    <Compile Include="TAClientHelp.cs" />
+    <Compile Include="Help\TAClientConnector.cs" />
+    <Compile Include="Help\TAClientHelp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="tac.ini">
