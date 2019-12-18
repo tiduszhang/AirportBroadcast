@@ -205,7 +205,7 @@ namespace AirportBroadcast.Equipment
         /// </summary>
         /// <returns></returns>
         public AirShowData ToAirShowData()
-        { 
+        {
             AirShowData airShowData = new AirShowData();
 
             airShowData.Routeoid = this.URNO;//航班主键
@@ -220,7 +220,7 @@ namespace AirportBroadcast.Equipment
 
             airShowData.ArrFIV1NO3 = this.VIA3;//进港经停1三字码 进港航班的最后一个经停机场/出港航班的第一个经停机场的三字代码
             airShowData.ArrFIV1NO4 = this.VIA4;//进港经停1四字码 进港航班的最后一个经停机场/出港航班的第一个经停机场的四字代码
-             
+
             airShowData.ForgNo3 = this.ORG3;//起场三字码
             airShowData.ForgNo4 = this.ORG4;//起场四字码
 
@@ -256,8 +256,15 @@ namespace AirportBroadcast.Equipment
 
             airShowData.FlightMssion = this.TTYP;//航班性质 W/Z
 
-            airShowData.Fiv1No4 = this.VIAL;//经停1四字码 顺序的航班经停机场列表（四字代码表示） this.VIAN 经停机场个数
-            airShowData.Fiv2No4 = this.VIAL;//经停2四字码 顺序的航班经停机场列表（四字代码表示） this.VIAN 经停机场个数
+            if (this.VIAN == "1")//this.VIAN 经停机场个数
+            {
+                airShowData.Fiv1No4 = this.VIAL;//经停1四字码 顺序的航班经停机场列表（四字代码表示） this.VIAN 经停机场个数
+            }
+            else if (!String.IsNullOrWhiteSpace(this.VIAN) && this.VIAN != "0")// == "2") 不等于空且不为0的时候截取两个
+            {
+                airShowData.Fiv1No4 = this.VIAL.Substring(0, 4);//经停1四字码 顺序的航班经停机场列表（四字代码表示） this.VIAN 经停机场个数
+                airShowData.Fiv2No4 = this.VIAL.Substring(4, 4);//经停2四字码 顺序的航班经停机场列表（四字代码表示） this.VIAN 经停机场个数
+            }
 
             //航班类型 I	国际 D	国内  Q	地区
             //航班区域属性（国际、国内、混合、地区，I表示国际航班、D表示国内航班、M表示混合航班、R表示港澳航班）
@@ -280,7 +287,7 @@ namespace AirportBroadcast.Equipment
 
             airShowData.Dlytype = this.DLCD;//延误类型
             airShowData.Dlytime = this.DLTI;//延误时间
-             
+
             return airShowData;
         }
     }
