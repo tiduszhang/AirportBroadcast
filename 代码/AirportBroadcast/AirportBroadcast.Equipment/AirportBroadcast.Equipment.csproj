@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Help\ActiveMQHelp.cs" />
     <Compile Include="Data\Airport.cs" />
     <Compile Include="Help\CommandHelp.cs" />
     <Compile Include="Command\ABDCommand.cs" />
