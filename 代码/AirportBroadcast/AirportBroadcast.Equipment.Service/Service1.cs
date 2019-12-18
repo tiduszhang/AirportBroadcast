@@ -23,7 +23,7 @@ namespace AirportBroadcast.Equipment.Service
         }
 
         protected override void OnStart(string[] args)
-        {
+        { 
             CommandHelp.StartRead();
             ActiveMQHelp.StartSend();
         }
