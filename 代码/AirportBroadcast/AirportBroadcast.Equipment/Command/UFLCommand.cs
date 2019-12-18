@@ -27,6 +27,11 @@ namespace AirportBroadcast.Equipment
         public virtual FlightInfo FlightInfo { get; set; }
 
         /// <summary>
+        /// MQ消息内容
+        /// </summary>
+        public virtual string MQCommand { get; set; }
+
+        /// <summary>
         /// 解析指令内容
         /// </summary>
         public virtual void Analysis()
@@ -70,6 +75,9 @@ namespace AirportBroadcast.Equipment
                     property.SetValue(FlightInfo, value);
                 }
             }
+
+            //创建MQ消息内容
+            CreateMQCommand();
         }
         /// <summary>
         /// 保存
@@ -77,6 +85,16 @@ namespace AirportBroadcast.Equipment
         public virtual void Save()
         {
 
+        }
+
+        /// <summary>
+        /// 创建MQ消息体
+        /// </summary>
+        private void CreateMQCommand()
+        {
+
+
+            MQCommand = "";
         }
     }
 }

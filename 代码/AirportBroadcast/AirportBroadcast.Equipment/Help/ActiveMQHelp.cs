@@ -51,5 +51,54 @@ namespace AirportBroadcast.Equipment
                 ex.ToString();
             }
         }
+
+        /// <summary>
+        /// 是否正在运行
+        /// </summary>
+        static bool isRun = false;
+
+        /// <summary>
+        /// 启动发送
+        /// </summary>
+        public static void StartSend()
+        {
+            if (isRun)
+            {
+                return;
+            }
+            isRun = true;
+
+
+            Task.Factory.StartNew(() =>
+            {
+                while (isRun)
+                {
+                    System.Threading.Thread.Sleep(1);
+                    var commands = CommandHelp.GetCommands();
+                    if (commands == null)
+                    {
+                        continue;
+                    }
+
+                    commands.ToList().ForEach(command =>
+                    {
+                        if (!String.IsNullOrWhiteSpace(command.CommandData.MQCommand))
+                        {
+                            SendMessage(command.CommandData.MQCommand);
+                        }
+                    });
+                }
+
+            });
+
+        }
+
+        /// <summary>
+        /// 停止发送
+        /// </summary>
+        public static void StopSend()
+        {
+            isRun = false;
+        }
     }
 }

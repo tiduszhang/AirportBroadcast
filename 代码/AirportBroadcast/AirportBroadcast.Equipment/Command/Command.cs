@@ -45,7 +45,7 @@ namespace AirportBroadcast.Equipment
         /// 结果指令
         /// </summary>
         public Command ResaultCommand { get; set; }
-
+          
         /// <summary>
         /// 解析指令内容
         /// </summary>
