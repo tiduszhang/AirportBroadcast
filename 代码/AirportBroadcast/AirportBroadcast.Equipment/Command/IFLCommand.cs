@@ -136,9 +136,9 @@ namespace AirportBroadcast.Equipment
 
             airShowData.FlightCirculationStatus = FlightInfo.STAT; //航班流转状态   
 
-            airShowData.Gate = String.IsNullOrWhiteSpace(FlightInfo.GAT1) ? FlightInfo.GAT1 : FlightInfo.GAT2;//登机口 FlightInfo.GAT2
+            airShowData.Gate = !String.IsNullOrWhiteSpace(FlightInfo.GAT1) ? FlightInfo.GAT1 : FlightInfo.GAT2;//登机口 FlightInfo.GAT2
 
-            airShowData.Carousel = String.IsNullOrWhiteSpace(FlightInfo.BLT1) ? FlightInfo.BLT1 : FlightInfo.BLT1;//行李转盘FlightInfo.BLT2
+            airShowData.Carousel = !String.IsNullOrWhiteSpace(FlightInfo.BLT1) ? FlightInfo.BLT1 : FlightInfo.BLT1;//行李转盘FlightInfo.BLT2
 
             if (FlightInfo.AORD == "A")//（A表示进港，D表示出港）
             {
