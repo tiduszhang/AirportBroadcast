@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServiceTools));
             this.btnInstall = new System.Windows.Forms.Button();
             this.btnUnInstall = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
             this.btnCheck = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // btnInstall
@@ -44,7 +46,7 @@
             this.btnInstall.Name = "btnInstall";
             this.btnInstall.Size = new System.Drawing.Size(75, 23);
             this.btnInstall.TabIndex = 0;
-            this.btnInstall.Text = "安装";
+            this.btnInstall.Text = "注册";
             this.btnInstall.UseVisualStyleBackColor = true;
             this.btnInstall.Click += new System.EventHandler(this.btnInstall_Click);
             // 
@@ -54,7 +56,7 @@
             this.btnUnInstall.Name = "btnUnInstall";
             this.btnUnInstall.Size = new System.Drawing.Size(75, 23);
             this.btnUnInstall.TabIndex = 1;
-            this.btnUnInstall.Text = "卸载";
+            this.btnUnInstall.Text = "注销";
             this.btnUnInstall.UseVisualStyleBackColor = true;
             this.btnUnInstall.Click += new System.EventHandler(this.btnUnInstall_Click);
             // 
@@ -106,6 +108,7 @@
             this.btnTest.TabIndex = 7;
             this.btnTest.Tag = "测试功能，不注册启动服务。";
             this.btnTest.Text = "测试";
+            this.toolTip1.SetToolTip(this.btnTest, "测试功能，不注册启动服务。");
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
@@ -141,5 +144,6 @@
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
