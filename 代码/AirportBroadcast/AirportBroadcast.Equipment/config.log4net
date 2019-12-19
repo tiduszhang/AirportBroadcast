@@ -30,7 +30,7 @@
 
     <root>
       <!--Highest: OFF->FATAL->ERROR->WARN->INFO->DEBUG->ALL :Lowest -->
-      <level value="ERROR"/>
+      <level value="ALL"/>
       <!--文件形式记录日志-->
       <appender-ref ref="RollingLogFileAppender"/>
       <appender-ref ref="TraceAppender" />

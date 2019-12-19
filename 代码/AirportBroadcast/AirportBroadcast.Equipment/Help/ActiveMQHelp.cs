@@ -42,13 +42,14 @@ namespace AirportBroadcast.Equipment
                         ITextMessage msg = prod.CreateTextMessage();
                         msg.Text = message;
                         prod.Send(msg);
+                        LogHelp.WriteToLog(String.Format("向MQ服务{0}发送消息：【{1}】", activeMQUrl, message), log4net.Core.Level.Info);
                         System.Threading.Thread.Sleep(1);
                     }
                 }
             }
             catch (Exception ex)
             {
-                ex.ToString();
+                LogHelp.WriteToLog(String.Format("向MQ服务{0}发送消息：【{1}】，出现异常：【{2}】", activeMQUrl, message, ex.ToString()), log4net.Core.Level.Error);
             }
         }
 
@@ -83,7 +84,7 @@ namespace AirportBroadcast.Equipment
                     commands.ToList().ForEach(command =>
                     {
                         try
-                        { 
+                        {
                             var commandString = command.CommandData.CreateMQCommand();
                             if (!String.IsNullOrWhiteSpace(commandString))
                             {
@@ -92,7 +93,7 @@ namespace AirportBroadcast.Equipment
                         }
                         catch (Exception ex)
                         {
-                            ex.ToString();
+                            LogHelp.WriteToLog(String.Format("航显系统数据转换到系统统一格式时出现异常：【{0}】", ex.ToString()), log4net.Core.Level.Error); 
                         }
                     });
                 }

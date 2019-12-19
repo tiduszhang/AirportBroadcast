@@ -66,10 +66,16 @@ namespace AirportBroadcast.Equipment
                     {
                         if (TAClientConnector.TAGetLinkStatus() != TAClientConnector.TA_LINKOK)
                         {
+                            LogHelp.WriteToLog("没有连接航显设备或连接出现异常！", log4net.Core.Level.Error);
                             TAClientConnector.TAClose();
                             System.Threading.Thread.Sleep(100);
+                            LogHelp.WriteToLog("开始连接航显设备....", log4net.Core.Level.Info);
                             TAClientHelp.Connection();
-                            continue;
+                            if (TAClientConnector.TAGetLinkStatus() != TAClientConnector.TA_LINKOK)
+                            {
+                                continue;
+                            }
+                            LogHelp.WriteToLog("已连接航显设备！", log4net.Core.Level.Info);
                         }
 
                         var length = 0;

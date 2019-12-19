@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirportBroadcast.Equipment.Help
+namespace AirportBroadcast.Equipment
 {
     /// <summary>
     /// 日志类
     /// </summary>
     public class LogHelp
-    { 
+    {
         /// <summary>
         /// 日志对象
         /// </summary>
@@ -29,11 +29,11 @@ namespace AirportBroadcast.Equipment.Help
             if (log == null)
             {
                 //string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().ManifestModule.FullyQualifiedName) + @"\config.log4net";
-                
+
                 string path = System.IO.Path.Combine(System.Environment.CurrentDirectory, "config.log4net"); ;
                 if (File.Exists(path))
                 {
-                    log4net.GlobalContext.Properties["LogUrl"] = System.IO.Path.Combine(System.Environment.CurrentDirectory, "logs");
+                    log4net.GlobalContext.Properties["LogUrl"] = System.Environment.CurrentDirectory;// System.IO.Path.Combine(System.Environment.CurrentDirectory, "logs");
                     log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(path));
                     log = log4net.LogManager.GetLogger("lognet");
                 }
@@ -78,6 +78,6 @@ namespace AirportBroadcast.Equipment.Help
             //    ex.ToString();
             //}
         }
-         
+
     }
 }

@@ -45,7 +45,7 @@ namespace AirportBroadcast.Equipment
         /// 结果指令
         /// </summary>
         public Command ResaultCommand { get; set; }
-          
+
         /// <summary>
         /// 解析指令内容
         /// </summary>
@@ -123,9 +123,10 @@ namespace AirportBroadcast.Equipment
             }
             catch (Exception ex)
             {
-                ex.ToString();
-                Message = String.Format("非法指令不解析：【{0}】", CommandString); ;
+                CommandData = null;
+                Message = String.Format("指令解析出现异常：【{0}】，异常信息：【{1}】。", CommandString, ex.ToString());
             }
+            LogHelp.WriteToLog(Message, log4net.Core.Level.Info);
         }
 
         /// <summary>

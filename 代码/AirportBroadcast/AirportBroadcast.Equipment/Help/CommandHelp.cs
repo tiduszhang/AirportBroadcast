@@ -115,6 +115,10 @@ namespace AirportBroadcast.Equipment
                 CommandString = commandString
             };
             command.Analysis();
+            if (command.CommandData == null)
+            {
+                return null;
+            }
             return command;
         }
 
