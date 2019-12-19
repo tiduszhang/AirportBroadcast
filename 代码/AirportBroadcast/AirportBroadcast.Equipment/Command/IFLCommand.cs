@@ -73,7 +73,7 @@ namespace AirportBroadcast.Equipment
             {
                 return "";
             }
-
+             
             var airShowData = FlightInfo.ToAirShowData();
             airShowData.RouteType = "CREATED";//关键字标识 CREATED 创建
             return Newtonsoft.Json.JsonConvert.SerializeObject(airShowData);
